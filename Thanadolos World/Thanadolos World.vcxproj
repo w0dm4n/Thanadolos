@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{C9303308-2DC4-4615-8C51-8389A6E02859}</ProjectGuid>
+    <RootNamespace>ThanadolosWorld</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Globals.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>Globals.h</PrecompiledHeaderFile>
+      <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AbstractCharacterInformation.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AbstractFightTeamInformations.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AccountCapabilitiesMessage.cpp" />
+    <ClCompile Include="ActorAlignmentInformations.cpp" />
+    <ClCompile Include="ActorExtendedAlignmentInformations.cpp" />
+    <ClCompile Include="ActorRestrictionsInformations.cpp" />
+    <ClCompile Include="ApproachHandler.cpp" />
+    <ClCompile Include="AuthenticationTicketAcceptedMessage.cpp" />
+    <ClCompile Include="AuthenticationTicketMessage.cpp" />
+    <ClCompile Include="BasicCharactersListMessage.cpp" />
+    <ClCompile Include="binary64.cpp" />
+    <ClCompile Include="BinaryReader.cpp" />
+    <ClCompile Include="BinaryWriter.cpp" />
+    <ClCompile Include="BooleanByteWrapper.cpp" />
+    <ClCompile Include="ByteOrder.cpp" />
+    <ClCompile Include="ChangeMapMessage.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CharacterBaseCharacteristic.cpp" />
+    <ClCompile Include="CharacterBaseInformations.cpp" />
+    <ClCompile Include="CharacterCapabilitiesMessage.cpp" />
+    <ClCompile Include="CharacterCharacteristicsInformations.cpp" />
+    <ClCompile Include="CharacterCreationRequestMessage.cpp" />
+    <ClCompile Include="CharacterCreationResultMessage.cpp" />
+    <ClCompile Include="CharacterDeletionErrorMessage.cpp" />
+    <ClCompile Include="CharacterDeletionRequestMessage.cpp" />
+    <ClCompile Include="CharacterLoadingCompleteMessage.cpp" />
+    <ClCompile Include="CharacterMinimalInformations.cpp" />
+    <ClCompile Include="CharacterMinimalPlusLookInformations.cpp" />
+    <ClCompile Include="CharacterNameSuggestionRequestMessage.cpp" />
+    <ClCompile Include="CharacterNameSuggestionSuccessMessage.cpp" />
+    <ClCompile Include="CharacterSelectedErrorMessage.cpp" />
+    <ClCompile Include="CharacterSelectedSuccessMessage.cpp" />
+    <ClCompile Include="CharacterSelectionMessage.cpp" />
+    <ClCompile Include="CharactersListMessage.cpp" />
+    <ClCompile Include="CharactersListRequestMessage.cpp" />
+    <ClCompile Include="CharactersManager.cpp" />
+    <ClCompile Include="CharacterSpellModification.cpp" />
+    <ClCompile Include="CharacterStatsListMessage.cpp" />
+    <ClCompile Include="ChatAbstractClientMessage.cpp" />
+    <ClCompile Include="ChatAbstractServerMessage.cpp" />
+    <ClCompile Include="ChatClientMultiMessage.cpp" />
+    <ClCompile Include="ChatClientPrivateMessage.cpp" />
+    <ClCompile Include="ChatHandler.cpp" />
+    <ClCompile Include="ChatServerCopyMessage.cpp" />
+    <ClCompile Include="ChatServerMessage.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="CurrentMapMessage.cpp" />
+    <ClCompile Include="CustomVisitor.cpp" />
+    <ClCompile Include="Database.cpp" />
+    <ClCompile Include="EntityDispositionInformations.cpp" />
+    <ClCompile Include="EntityLook.cpp" />
+    <ClCompile Include="FightCommonInformations.cpp" />
+    <ClCompile Include="FightOptionsInformations.cpp" />
+    <ClCompile Include="FightStartingPositions.cpp" />
+    <ClCompile Include="FightTeamInformations.cpp" />
+    <ClCompile Include="FightTeamMemberInformations.cpp" />
+    <ClCompile Include="ft_bzero.cpp" />
+    <ClCompile Include="GameContextActorInformations.cpp" />
+    <ClCompile Include="GameContextCreateErrorMessage.cpp" />
+    <ClCompile Include="GameContextCreateMessage.cpp" />
+    <ClCompile Include="GameContextCreateRequestMessage.cpp" />
+    <ClCompile Include="GameContextDestroyMessage.cpp" />
+    <ClCompile Include="GameContextRemoveElementMessage.cpp" />
+    <ClCompile Include="GameHandler.cpp" />
+    <ClCompile Include="GameMapMovementCancelMessage.cpp" />
+    <ClCompile Include="GameMapMovementConfirmMessage.cpp" />
+    <ClCompile Include="GameMapMovementMessage.cpp" />
+    <ClCompile Include="GameMapMovementRequestMessage.cpp" />
+    <ClCompile Include="GameRolePlayActorInformations.cpp" />
+    <ClCompile Include="GameRolePlayCharacterInformations.cpp" />
+    <ClCompile Include="GameRolePlayHumanoidInformations.cpp" />
+    <ClCompile Include="GameRolePlayNamedActorInformations.cpp" />
+    <ClCompile Include="GameRolePlayShowActorMessage.cpp" />
+    <ClCompile Include="GameServerInformations.cpp" />
+    <ClCompile Include="Globals.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="HelloGameMessage.cpp" />
+    <ClCompile Include="HouseInformations.cpp" />
+    <ClCompile Include="HumanInformations.cpp" />
+    <ClCompile Include="HumanOption.cpp" />
+    <ClCompile Include="int64.cpp" />
+    <ClCompile Include="InteractiveElement.cpp" />
+    <ClCompile Include="InteractiveElementSkill.cpp" />
+    <ClCompile Include="IPC.cpp" />
+    <ClCompile Include="IpcDeletedCharacterMessage.cpp" />
+    <ClCompile Include="IpcNewCharacterMessage.cpp" />
+    <ClCompile Include="IpcTicketAccountMessage.cpp" />
+    <ClCompile Include="LifePointsRegenBeginMessage.cpp" />
+    <ClCompile Include="LifePointsRegenEndMessage.cpp" />
+    <ClCompile Include="Locker.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapComplementaryInformationsDataMessage.cpp" />
+    <ClCompile Include="MapInformationsRequestMessage.cpp" />
+    <ClCompile Include="MapObstacle.cpp" />
+    <ClCompile Include="MapsManager.cpp" />
+    <ClCompile Include="NotificationListMessage.cpp" />
+    <ClCompile Include="Packet.cpp" />
+    <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="PropertyData.cpp" />
+    <ClCompile Include="ProtocolRequired.cpp" />
+    <ClCompile Include="ReloginTokenRequestMessage.cpp" />
+    <ClCompile Include="ReloginTokenStatusMessage.cpp" />
+    <ClCompile Include="Save.cpp" />
+    <ClCompile Include="ServerOptionalFeaturesMessage.cpp" />
+    <ClCompile Include="ServerSettingsMessage.cpp" />
+    <ClCompile Include="ServerStatusUpdateMessage.cpp" />
+    <ClCompile Include="StatedElement.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="StatsUpgradeRequestMessage.cpp" />
+    <ClCompile Include="StatsUpgradeResultMessage.cpp" />
+    <ClCompile Include="SubEntity.cpp" />
+    <ClCompile Include="TextInformationMessage.cpp" />
+    <ClCompile Include="TrustStatusMessage.cpp" />
+    <ClCompile Include="uint64.cpp" />
+    <ClCompile Include="UpdateLifePointsMessage.cpp" />
+    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="World.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="WorldClient.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AbstractCharacterInformation.hpp" />
+    <ClInclude Include="AbstractFightTeamInformations.hpp" />
+    <ClInclude Include="AccountRecord.hpp" />
+    <ClInclude Include="AccountCapabilitiesMessage.hpp" />
+    <ClInclude Include="AccountRole.hpp" />
+    <ClInclude Include="ActorAlignmentInformations.hpp" />
+    <ClInclude Include="ActorExtendedAlignmentInformations.hpp" />
+    <ClInclude Include="ActorRestrictionsInformations.hpp" />
+    <ClInclude Include="ApproachHandler.hpp" />
+    <ClInclude Include="AuthenticationTicketAcceptedMessage.hpp" />
+    <ClInclude Include="AuthenticationTicketMessage.hpp" />
+    <ClInclude Include="BasicCharactersListMessage.hpp" />
+    <ClInclude Include="binary64.hpp" />
+    <ClInclude Include="BinaryReader.hpp" />
+    <ClInclude Include="BinaryWriter.hpp" />
+    <ClInclude Include="BooleanByteWrapper.hpp" />
+    <ClInclude Include="Breeds.hpp" />
+    <ClInclude Include="BreedsRecord.hpp" />
+    <ClInclude Include="ByteOrder.hpp" />
+    <ClInclude Include="ChangeMapMessage.hpp" />
+    <ClInclude Include="Character.hpp" />
+    <ClInclude Include="CharacterBaseCharacteristic.hpp" />
+    <ClInclude Include="CharacterCapabilitiesMessage.hpp" />
+    <ClInclude Include="CharacterCharacteristicsInformations.hpp" />
+    <ClInclude Include="CharacterDeletionErrorEnum.hpp" />
+    <ClInclude Include="CharacterDeletionRequestMessage.hpp" />
+    <ClInclude Include="CharacterLoadingCompleteMessage.hpp" />
+    <ClInclude Include="CharacterRecord.hpp" />
+    <ClInclude Include="CharacterBaseInformations.hpp" />
+    <ClInclude Include="CharacterBasicMinimalInformations.hpp" />
+    <ClInclude Include="CharacterCreationRequestMessage.hpp" />
+    <ClInclude Include="CharacterCreationResultEnum.hpp" />
+    <ClInclude Include="CharacterCreationResultMessage.hpp" />
+    <ClInclude Include="CharacterDeletionErrorMessage.hpp" />
+    <ClInclude Include="CharacterMinimalInformations.hpp" />
+    <ClInclude Include="CharacterMinimalPlusLookInformations.hpp" />
+    <ClInclude Include="CharacterNameSuggestionRequestMessage.hpp" />
+    <ClInclude Include="CharacterNameSuggestionSuccessMessage.hpp" />
+    <ClInclude Include="CharacterSelectedErrorMessage.hpp" />
+    <ClInclude Include="CharacterSelectedSuccessMessage.hpp" />
+    <ClInclude Include="CharacterSelectionMessage.hpp" />
+    <ClInclude Include="CharactersListMessage.hpp" />
+    <ClInclude Include="CharactersListRequestMessage.hpp" />
+    <ClInclude Include="CharactersManager.hpp" />
+    <ClInclude Include="CharacterSpellModification.hpp" />
+    <ClInclude Include="CharacterStatsListMessage.hpp" />
+    <ClInclude Include="CharacterStatsRecord.hpp" />
+    <ClInclude Include="ChatAbstractClientMessage.hpp" />
+    <ClInclude Include="ChatAbstractServerMessage.hpp" />
+    <ClInclude Include="ChatActivableChannelsEnum.hpp" />
+    <ClInclude Include="ChatClientMultiMessage.hpp" />
+    <ClInclude Include="ChatClientPrivateMessage.hpp" />
+    <ClInclude Include="ChatHandler.hpp" />
+    <ClInclude Include="ChatServerCopyMessage.hpp" />
+    <ClInclude Include="ChatServerMessage.hpp" />
+    <ClInclude Include="Config.hpp" />
+    <ClInclude Include="CurrentMapMessage.hpp" />
+    <ClInclude Include="CustomVisitor.hpp" />
+    <ClInclude Include="Database.hpp" />
+    <ClInclude Include="DirectionsEnum.hpp" />
+    <ClInclude Include="EntityDispositionInformations.hpp" />
+    <ClInclude Include="EntityLook.hpp" />
+    <ClInclude Include="ExperiencesRecord.hpp" />
+    <ClInclude Include="FightCommonInformations.hpp" />
+    <ClInclude Include="FightOptionsInformations.hpp" />
+    <ClInclude Include="FightStartingPositions.hpp" />
+    <ClInclude Include="FightTeamInformations.hpp" />
+    <ClInclude Include="FightTeamMemberInformations.hpp" />
+    <ClInclude Include="GameContextActorInformations.hpp" />
+    <ClInclude Include="GameContextCreateErrorMessage.hpp" />
+    <ClInclude Include="GameContextCreateMessage.hpp" />
+    <ClInclude Include="GameContextCreateRequestMessage.hpp" />
+    <ClInclude Include="GameContextDestroyMessage.hpp" />
+    <ClInclude Include="GameContextRemoveElementMessage.hpp" />
+    <ClInclude Include="GameHandler.hpp" />
+    <ClInclude Include="GameMapMovementCancelMessage.hpp" />
+    <ClInclude Include="GameMapMovementConfirmMessage.hpp" />
+    <ClInclude Include="GameMapMovementMessage.hpp" />
+    <ClInclude Include="GameMapMovementRequestMessage.hpp" />
+    <ClInclude Include="GameRolePlayActorInformations.hpp" />
+    <ClInclude Include="GameRolePlayCharacterInformations.hpp" />
+    <ClInclude Include="GameRolePlayHumanoidInformations.hpp" />
+    <ClInclude Include="GameRolePlayNamedActorInformations.hpp" />
+    <ClInclude Include="GameRolePlayShowActorMessage.hpp" />
+    <ClInclude Include="GameServerInformations.hpp" />
+    <ClInclude Include="Globals.h" />
+    <ClInclude Include="HeadsRecord.hpp" />
+    <ClInclude Include="HelloGameMessage.hpp" />
+    <ClInclude Include="HouseInformations.hpp" />
+    <ClInclude Include="HumanInformations.hpp" />
+    <ClInclude Include="HumanOption.hpp" />
+    <ClInclude Include="imessage.h" />
+    <ClInclude Include="InteractiveElement.hpp" />
+    <ClInclude Include="InteractiveElementSkill.hpp" />
+    <ClInclude Include="IPC.hpp" />
+    <ClInclude Include="IpcDeletedCharacterMessage.hpp" />
+    <ClInclude Include="IpcNewCharacterMessage.hpp" />
+    <ClInclude Include="IpcTicketAccountMessage.hpp" />
+    <ClInclude Include="iType.hpp" />
+    <ClInclude Include="LifePointsRegenBeginMessage.hpp" />
+    <ClInclude Include="LifePointsRegenEndMessage.hpp" />
+    <ClInclude Include="Locker.hpp" />
+    <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Map.hpp" />
+    <ClInclude Include="MapComplementaryInformationsDataMessage.hpp" />
+    <ClInclude Include="MapInformationsRequestMessage.hpp" />
+    <ClInclude Include="MapObstacle.hpp" />
+    <ClInclude Include="MapsManager.hpp" />
+    <ClInclude Include="MapsPositionsRecord.hpp" />
+    <ClInclude Include="MapsRecord.hpp" />
+    <ClInclude Include="MapsSubareasRecord.hpp" />
+    <ClInclude Include="NotificationListMessage.hpp" />
+    <ClInclude Include="Packet.hpp" />
+    <ClInclude Include="Processor.hpp" />
+    <ClInclude Include="PropertyData.hpp" />
+    <ClInclude Include="ProtocolRequired.hpp" />
+    <ClInclude Include="ReloginTokenRequestMessage.hpp" />
+    <ClInclude Include="ReloginTokenStatusMessage.hpp" />
+    <ClInclude Include="Save.hpp" />
+    <ClInclude Include="ServerOptionalFeaturesMessage.hpp" />
+    <ClInclude Include="ServerSettingsMessage.hpp" />
+    <ClInclude Include="ServerStatusUpdateMessage.hpp" />
+    <ClInclude Include="StatedElement.hpp" />
+    <ClInclude Include="Stats.hpp" />
+    <ClInclude Include="StatsBoostTypeEnum.hpp" />
+    <ClInclude Include="StatsUpgradeRequestMessage.hpp" />
+    <ClInclude Include="StatsUpgradeResultEnum.hpp" />
+    <ClInclude Include="StatsUpgradeResultMessage.hpp" />
+    <ClInclude Include="SubEntity.hpp" />
+    <ClInclude Include="TextInformationMessage.hpp" />
+    <ClInclude Include="TrustStatusMessage.hpp" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="uint64.hpp" />
+    <ClInclude Include="UpdateLifePointsMessage.hpp" />
+    <ClInclude Include="Utils.hpp" />
+    <ClInclude Include="winsock2class.h" />
+    <ClInclude Include="World.hpp" />
+    <ClInclude Include="WorldClient.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CharacterBasicMinimalInformations.cpp" />
+    <None Include="int64.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

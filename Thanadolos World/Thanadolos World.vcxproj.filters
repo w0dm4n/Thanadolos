@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\utils">
+      <UniqueIdentifier>{2df4cfdc-f426-4bd1-9aca-39d9e4466019}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\io">
+      <UniqueIdentifier>{b4102d7a-cbc1-4e19-9489-2846db4e04f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\io\types">
+      <UniqueIdentifier>{7f690e59-145a-4b97-a60d-6433fbecd274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network">
+      <UniqueIdentifier>{e08d98f3-1f67-486a-9735-ee0dca8f49ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages">
+      <UniqueIdentifier>{8c4f930d-3959-4382-9c75-2cfd3fc5df15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types">
+      <UniqueIdentifier>{9ac1cf3c-6294-4e55-8e17-6d5c4531b250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\enums">
+      <UniqueIdentifier>{21e87cf5-7c4e-454d-abff-0d8c485e1d21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\orm">
+      <UniqueIdentifier>{07116cd9-678f-4435-abd3-8c836ac93a0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\database">
+      <UniqueIdentifier>{931aaf10-716a-4077-b2db-c63a1f23658a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\connection">
+      <UniqueIdentifier>{2923ff27-355d-4215-8e24-e1c762138e99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\connection">
+      <UniqueIdentifier>{8838da3a-e7ff-4dc9-a0b9-003e77a4e2c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\approach">
+      <UniqueIdentifier>{2686c06f-1d7b-4a2f-bc90-bd782cf97de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\handlers">
+      <UniqueIdentifier>{b4111d64-07f1-4b3a-bfb0-86bc0967a708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\handlers">
+      <UniqueIdentifier>{9f4999bf-ede0-4274-b7b9-10de980a7b23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\ipc">
+      <UniqueIdentifier>{5e4bd1de-a593-49e0-ad07-7f6732678d75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\character">
+      <UniqueIdentifier>{9a7c56da-4765-41cc-83ea-fec98d39c089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\character">
+      <UniqueIdentifier>{588dc814-451e-46aa-8980-55de2eacedd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\look">
+      <UniqueIdentifier>{95f82df6-9523-403c-a917-dc38f9fd2d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\managers">
+      <UniqueIdentifier>{b4a83efa-8e7b-44be-976b-9fe5f3076f15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\managers">
+      <UniqueIdentifier>{f08fa774-9198-4d13-973b-3fc9a36504ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\world">
+      <UniqueIdentifier>{1bd24e17-2cd1-46d6-ba14-1fb600541f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\world\characters">
+      <UniqueIdentifier>{34751e99-fc24-4b9c-b428-e98f6fc8b4f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\world">
+      <UniqueIdentifier>{6f8ddf6a-150f-4b54-8ee6-be1c22d5dc13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\world\characters">
+      <UniqueIdentifier>{75e3a16a-0329-44d5-b9fd-33d50cfb75ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\notifications">
+      <UniqueIdentifier>{1b63f1ee-27fc-4b83-9e13-5405ed4f6774}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\context">
+      <UniqueIdentifier>{806f45e5-230a-4298-986e-dc5b5273df0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\context\roleplay">
+      <UniqueIdentifier>{b6f68863-9c73-4a9f-9de7-94e56d1ba853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game">
+      <UniqueIdentifier>{971c3d60-d75d-4364-8f03-5b5fc11779f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\house">
+      <UniqueIdentifier>{903d73ea-9481-4082-94c6-de8b8c324c31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\context">
+      <UniqueIdentifier>{3293df49-5516-4f38-b711-cb5e27418a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\interactive">
+      <UniqueIdentifier>{52d877f9-6066-45d6-b1e6-403868ee883d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\context\fight">
+      <UniqueIdentifier>{267c6d3c-5599-41f7-a798-53cf8a28078a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\world\maps">
+      <UniqueIdentifier>{3adeba25-2c02-48f0-a3c9-a2a18ce8649b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\world\maps">
+      <UniqueIdentifier>{78379130-75fc-43ed-b10a-43d833e43f00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\character\restrictions">
+      <UniqueIdentifier>{8c27441c-9252-45f7-8138-e8e65d82e5ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\character">
+      <UniqueIdentifier>{50452315-6c05-44b2-901b-d71cfeec14e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\character\alignment">
+      <UniqueIdentifier>{b66deba6-d4bf-4598-bb05-bf469cda076d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\character\characteristic">
+      <UniqueIdentifier>{567d7ec8-711e-45d9-bc34-2932b11c1b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\character\alignment">
+      <UniqueIdentifier>{a68183bf-bc1a-4b71-9240-3eb6e7a76213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\character\stats">
+      <UniqueIdentifier>{b7a254a7-cb25-4f1b-be6e-ac1a4d0b09b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\world\characters\stats">
+      <UniqueIdentifier>{39972f82-b11d-49ce-90e7-43c457029ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\world\characters\stats">
+      <UniqueIdentifier>{f7f3672c-4f57-43d9-8716-2badfcc0176e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\context\roleplay">
+      <UniqueIdentifier>{2d61e7b7-28d9-4f62-b604-49bd0bf2cdd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\basic">
+      <UniqueIdentifier>{4f44edfd-6420-48be-b5e4-121a35622151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\chat">
+      <UniqueIdentifier>{23eb8ca1-09b3-4468-b349-3b8e30916260}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldClient.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Locker.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_bzero.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanByteWrapper.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ByteOrder.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryReader.cpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClCompile>
+    <ClCompile Include="binary64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="int64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="uint64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryWriter.cpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet.cpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="IPC.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="GameServerInformations.cpp">
+      <Filter>Fichiers sources\network\types\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerStatusUpdateMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtocolRequired.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="HelloGameMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthenticationTicketMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="ApproachHandler.cpp">
+      <Filter>Fichiers sources\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcTicketAccountMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthenticationTicketAcceptedMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSettingsMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerOptionalFeaturesMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountCapabilitiesMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="TrustStatusMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="CharactersListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharactersListRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractCharacterInformation.cpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterMinimalInformations.cpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClCompile>
+    <ClCompile Include="SubEntity.cpp">
+      <Filter>Fichiers sources\network\types\look</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityLook.cpp">
+      <Filter>Fichiers sources\network\types\look</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterMinimalPlusLookInformations.cpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterBaseInformations.cpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicCharactersListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="ReloginTokenRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="ReloginTokenStatusMessage.cpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterNameSuggestionRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterNameSuggestionSuccessMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="CharactersManager.cpp">
+      <Filter>Fichiers sources\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterDeletionErrorMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCreationResultMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCreationRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Fichiers sources\world\characters</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcNewCharacterMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterDeletionRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcDeletedCharacterMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectionMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="NotificationListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\notifications</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectedSuccessMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelectedErrorMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCapabilitiesMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterLoadingCompleteMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClCompile>
+    <ClCompile Include="GameHandler.cpp">
+      <Filter>Fichiers sources\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextCreateRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextCreateMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextCreateErrorMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="CurrentMapMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextDestroyMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="MapInformationsRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="MapComplementaryInformationsDataMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="HouseInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\house</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityDispositionInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextActorInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRolePlayActorInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="InteractiveElementSkill.cpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="InteractiveElement.cpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="StatedElement.cpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObstacle.cpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClCompile>
+    <ClCompile Include="FightTeamMemberInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="FightTeamInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractFightTeamInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="FightCommonInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="FightOptionsInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="FightStartingPositions.cpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Fichiers sources\world\maps</Filter>
+    </ClCompile>
+    <ClCompile Include="MapsManager.cpp">
+      <Filter>Fichiers sources\managers</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRolePlayNamedActorInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRolePlayHumanoidInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorRestrictionsInformations.cpp">
+      <Filter>Fichiers sources\network\types\character\restrictions</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanOption.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRolePlayCharacterInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorAlignmentInformations.cpp">
+      <Filter>Fichiers sources\network\types\game\character\alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="GameRolePlayShowActorMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMapMovementRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMapMovementMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMapMovementConfirmMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMapMovementCancelMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="GameContextRemoveElementMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClCompile>
+    <ClCompile Include="ChangeMapMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterBaseCharacteristic.cpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSpellModification.cpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterCharacteristicsInformations.cpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorExtendedAlignmentInformations.cpp">
+      <Filter>Fichiers sources\network\types\character\alignment</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterStatsListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateLifePointsMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Fichiers sources\world\characters\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="Globals.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsUpgradeRequestMessage.cpp">
+      <Filter>Fichiers sources\network\types\game\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="StatsUpgradeResultMessage.cpp">
+      <Filter>Fichiers sources\network\types\game\context\roleplay</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomVisitor.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertyData.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Save.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="LifePointsRegenBeginMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="LifePointsRegenEndMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="TextInformationMessage.cpp">
+      <Filter>Fichiers sources\network\messages\basic</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatAbstractClientMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatClientMultiMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatAbstractServerMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatServerMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatServerCopyMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatHandler.cpp">
+      <Filter>Fichiers sources\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatClientPrivateMessage.cpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="World.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldClient.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Locker.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanByteWrapper.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryReader.hpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClInclude>
+    <ClInclude Include="binary64.hpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="uint64.hpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="ByteOrder.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryWriter.hpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClInclude>
+    <ClInclude Include="imessage.h">
+      <Filter>Fichiers sources\network\messages</Filter>
+    </ClInclude>
+    <ClInclude Include="iType.hpp">
+      <Filter>Fichiers sources\network\types</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.hpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="IPC.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerStatusUpdateMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtocolRequired.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="HelloGameMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthenticationTicketMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="ApproachHandler.hpp">
+      <Filter>Fichiers d%27en-tête\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcTicketAccountMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthenticationTicketAcceptedMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSettingsMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerOptionalFeaturesMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountCapabilitiesMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="TrustStatusMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="Breeds.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CharactersListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharactersListRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServerInformations.hpp">
+      <Filter>Fichiers sources\network\types\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractCharacterInformation.hpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterBasicMinimalInformations.hpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterMinimalInformations.hpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClInclude>
+    <ClInclude Include="SubEntity.hpp">
+      <Filter>Fichiers sources\network\types\look</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityLook.hpp">
+      <Filter>Fichiers sources\network\types\look</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterMinimalPlusLookInformations.hpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterBaseInformations.hpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicCharactersListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="ReloginTokenRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="ReloginTokenStatusMessage.hpp">
+      <Filter>Fichiers sources\network\messages\approach</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterNameSuggestionRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterNameSuggestionSuccessMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="CharactersManager.hpp">
+      <Filter>Fichiers d%27en-tête\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterDeletionErrorMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreationResultMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreationRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCreationResultEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.hpp">
+      <Filter>Fichiers d%27en-tête\world\characters</Filter>
+    </ClInclude>
+    <ClInclude Include="winsock2class.h">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcNewCharacterMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="HeadsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterDeletionRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterDeletionErrorEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcDeletedCharacterMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="BreedsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectionMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="NotificationListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\notifications</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectedSuccessMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelectedErrorMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCapabilitiesMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterLoadingCompleteMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character</Filter>
+    </ClInclude>
+    <ClInclude Include="GameHandler.hpp">
+      <Filter>Fichiers d%27en-tête\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextCreateRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextCreateMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextCreateErrorMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrentMapMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextDestroyMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="MapInformationsRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="MapComplementaryInformationsDataMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="HouseInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\house</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityDispositionInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextActorInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRolePlayActorInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="InteractiveElementSkill.hpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="InteractiveElement.hpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="StatedElement.hpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObstacle.hpp">
+      <Filter>Fichiers sources\network\types\game\interactive</Filter>
+    </ClInclude>
+    <ClInclude Include="FightTeamMemberInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="FightTeamInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractFightTeamInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="FightCommonInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="FightOptionsInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="FightStartingPositions.hpp">
+      <Filter>Fichiers sources\network\types\game\context\fight</Filter>
+    </ClInclude>
+    <ClInclude Include="MapsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="MapsPositionsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="MapsSubareasRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.hpp">
+      <Filter>Fichiers d%27en-tête\world\maps</Filter>
+    </ClInclude>
+    <ClInclude Include="MapsManager.hpp">
+      <Filter>Fichiers d%27en-tête\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRolePlayNamedActorInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRolePlayHumanoidInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorRestrictionsInformations.hpp">
+      <Filter>Fichiers sources\network\types\character\restrictions</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanOption.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRolePlayCharacterInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\context</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorAlignmentInformations.hpp">
+      <Filter>Fichiers sources\network\types\game\character\alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="GameRolePlayShowActorMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMapMovementRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMapMovementMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMapMovementConfirmMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMapMovementCancelMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="GameContextRemoveElementMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context</Filter>
+    </ClInclude>
+    <ClInclude Include="ChangeMapMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionsEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterBaseCharacteristic.hpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSpellModification.hpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterCharacteristicsInformations.hpp">
+      <Filter>Fichiers sources\network\types\character\characteristic</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorExtendedAlignmentInformations.hpp">
+      <Filter>Fichiers sources\network\types\character\alignment</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterStatsListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateLifePointsMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.hpp">
+      <Filter>Fichiers d%27en-tête\world\characters\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterStatsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="ExperiencesRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsUpgradeRequestMessage.hpp">
+      <Filter>Fichiers sources\network\types\game\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsUpgradeResultMessage.hpp">
+      <Filter>Fichiers sources\network\types\game\context\roleplay</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsBoostTypeEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="StatsUpgradeResultEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomVisitor.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertyData.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Save.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="LifePointsRegenBeginMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="LifePointsRegenEndMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="TextInformationMessage.hpp">
+      <Filter>Fichiers sources\network\messages\basic</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatAbstractClientMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatClientMultiMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatAbstractServerMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatServerMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatServerCopyMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatActivableChannelsEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatHandler.hpp">
+      <Filter>Fichiers d%27en-tête\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountRole.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatClientPrivateMessage.hpp">
+      <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="int64.hpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </None>
+    <None Include="CharacterBasicMinimalInformations.cpp">
+      <Filter>Fichiers sources\network\types\character</Filter>
+    </None>
+  </ItemGroup>
+</Project>
