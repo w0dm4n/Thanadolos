@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1D06509D-166D-48E9-8F76-60278EC432CE}</ProjectGuid>
+    <RootNamespace>ThanadolosAuth</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_MBCS;_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\mysql++-3.2.3\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\Ponder\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\mysql++-3.2.3\vc2008\x64\Release;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\Ponder\build\Debug;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\cryptopp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\build\Debug;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\cryptopp\x64\DLL_Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\mysql++-3.2.3\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\build\Debug;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\cryptopp\x64\DLL_Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Auth.cpp" />
+    <ClCompile Include="Auth.hpp" />
+    <ClCompile Include="AuthHandler.cpp" />
+    <ClCompile Include="BasicPingMessage.cpp" />
+    <ClCompile Include="binary64.cpp" />
+    <ClCompile Include="BinaryReader.cpp" />
+    <ClCompile Include="BinaryWriter.cpp" />
+    <ClCompile Include="BooleanByteWrapper.cpp" />
+    <ClCompile Include="ByteOrder.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="Database.cpp" />
+    <ClCompile Include="ft_bzero.cpp" />
+    <ClCompile Include="GameServerInformations.cpp" />
+    <ClCompile Include="HelloConnectMessage.cpp" />
+    <ClCompile Include="IdentificationFailedMessage.cpp" />
+    <ClCompile Include="IdentificationMessage.cpp" />
+    <ClCompile Include="IdentificationSuccessMessage.cpp" />
+    <ClCompile Include="int64.cpp" />
+    <ClCompile Include="IPC.cpp" />
+    <ClCompile Include="IPCClient.cpp" />
+    <ClCompile Include="IpcDeletedCharacterMessage.cpp" />
+    <ClCompile Include="IpcNewCharacterMessage.cpp" />
+    <ClCompile Include="IpcTicketAccountMessage.cpp" />
+    <ClCompile Include="Locker.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Packet.cpp" />
+    <ClCompile Include="Processor.cpp" />
+    <ClCompile Include="ProtocolRequired.cpp" />
+    <ClCompile Include="RawDataMessage.cpp" />
+    <ClCompile Include="SelectedServerDataMessage.cpp" />
+    <ClCompile Include="ServerListMessage.cpp" />
+    <ClCompile Include="Account.hpp" />
+    <ClCompile Include="ServerSelectionMessage.cpp" />
+    <ClCompile Include="ServerStatusUpdateMessage.cpp" />
+    <ClCompile Include="Tickets.cpp" />
+    <ClCompile Include="uint64.cpp" />
+    <ClCompile Include="Version.cpp" />
+    <ClCompile Include="VersionExtended.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AuthHandler.hpp" />
+    <ClInclude Include="BasicPingMessage.hpp" />
+    <ClInclude Include="binary64.h" />
+    <ClInclude Include="BinaryReader.hpp" />
+    <ClInclude Include="BinaryWriter.hpp" />
+    <ClInclude Include="BooleanByteWrapper.hpp" />
+    <ClInclude Include="ByteOrder.hpp" />
+    <ClInclude Include="Client.hpp" />
+    <ClInclude Include="Config.hpp" />
+    <ClInclude Include="Database.hpp" />
+    <ClInclude Include="GameServerInformations.hpp" />
+    <ClInclude Include="HelloConnectMessage.hpp" />
+    <ClInclude Include="IpcDeletedCharacterMessage.hpp" />
+    <ClInclude Include="IpcNewCharacterMessage.hpp" />
+    <ClInclude Include="IpcTicketAccountMessage.hpp" />
+    <ClInclude Include="IdentificationFailedMessage.hpp" />
+    <ClInclude Include="IdentificationFailureReason.hpp" />
+    <ClInclude Include="IdentificationMessage.hpp" />
+    <ClInclude Include="IdentificationSuccessMessage.hpp" />
+    <ClInclude Include="imessage.h" />
+    <ClInclude Include="int64.h" />
+    <ClInclude Include="IPC.hpp" />
+    <ClInclude Include="IPCClient.hpp" />
+    <ClInclude Include="IType.hpp" />
+    <ClInclude Include="Locker.hpp" />
+    <ClInclude Include="Logger.hpp" />
+    <ClInclude Include="Packet.hpp" />
+    <ClInclude Include="Processor.hpp" />
+    <ClInclude Include="ProtocolRequired.hpp" />
+    <ClInclude Include="RawDataMessage.hpp" />
+    <ClInclude Include="SelectedServerDataMessage.hpp" />
+    <ClInclude Include="ServerListMessage.hpp" />
+    <ClInclude Include="ServerSelectionMessage.hpp" />
+    <ClInclude Include="ServerStatus.hpp" />
+    <ClInclude Include="ServerStatusUpdateMessage.hpp" />
+    <ClInclude Include="types.h" />
+    <ClInclude Include="uint64.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Tickets.hpp" />
+    <ClInclude Include="Version.hpp" />
+    <ClInclude Include="VersionExtended.hpp" />
+    <ClInclude Include="WorldsCharacters.hpp" />
+    <ClInclude Include="WorldsServers.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

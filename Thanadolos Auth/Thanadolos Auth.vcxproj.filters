@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers sources\io">
+      <UniqueIdentifier>{ca5ef43c-fdb9-468b-85bd-061b266f7e73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\io\types">
+      <UniqueIdentifier>{d266549f-8654-4ea0-b17d-20a1304d44c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\utils">
+      <UniqueIdentifier>{ea84ceec-c40c-4999-a0e9-89fe37eb95b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network">
+      <UniqueIdentifier>{646da731-6f83-4f22-9a4d-8567605120ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages">
+      <UniqueIdentifier>{638fcd2d-e730-4c5e-a6e7-0b5868d5dadd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\common">
+      <UniqueIdentifier>{7a2b7ba7-043c-45ea-82e3-8b001674c653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\handshake">
+      <UniqueIdentifier>{e33d0a36-d6b1-427f-bb48-756d2274590e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\connection">
+      <UniqueIdentifier>{5dc608e1-7356-47a4-b710-11a079f956e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\security">
+      <UniqueIdentifier>{6b3d397c-01c9-49dc-b3a2-f0bda5017b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types">
+      <UniqueIdentifier>{8b37bfd6-ba1f-4695-b57a-12b37be1a137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\version">
+      <UniqueIdentifier>{5d61e467-7e0a-41b0-9f8b-4194097f190e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\handlers">
+      <UniqueIdentifier>{3b9a93c5-8b02-452b-b3c0-9c5ebe25b1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\handlers">
+      <UniqueIdentifier>{7fa2373b-729c-4300-b108-05ca83986eb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\connection">
+      <UniqueIdentifier>{f78441c6-dba9-49ac-a294-b5584c9886c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\orm">
+      <UniqueIdentifier>{81bee3d2-45b7-4488-acb9-08dfd8ddfe62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\database">
+      <UniqueIdentifier>{cb27f409-99ad-4b56-9f43-a76ec3381f85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\enums">
+      <UniqueIdentifier>{ea673470-d592-4f37-9580-86772fbef9f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\ipc">
+      <UniqueIdentifier>{6bc7f4be-e51b-4304-a363-5b9a670cff59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Auth.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClCompile>
+    <ClCompile Include="Auth.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryReader.cpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClCompile>
+    <ClCompile Include="uint64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="int64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="binary64.cpp">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClCompile>
+    <ClCompile Include="ft_bzero.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ByteOrder.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanByteWrapper.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicPingMessage.cpp">
+      <Filter>Fichiers sources\network\messages\common</Filter>
+    </ClCompile>
+    <ClCompile Include="Processor.cpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClCompile>
+    <ClCompile Include="ProtocolRequired.cpp">
+      <Filter>Fichiers sources\network\messages\handshake</Filter>
+    </ClCompile>
+    <ClCompile Include="HelloConnectMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="RawDataMessage.cpp">
+      <Filter>Fichiers sources\network\messages\security</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentificationMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Version.cpp">
+      <Filter>Fichiers sources\network\types\version</Filter>
+    </ClCompile>
+    <ClCompile Include="VersionExtended.cpp">
+      <Filter>Fichiers sources\network\types\version</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthHandler.cpp">
+      <Filter>Fichiers sources\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentificationSuccessMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="GameServerInformations.cpp">
+      <Filter>Fichiers sources\network\types\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Account.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentificationFailedMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryWriter.cpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet.cpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClCompile>
+    <ClCompile Include="Locker.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IPC.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="IPCClient.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerStatusUpdateMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerSelectionMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectedServerDataMessage.cpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Tickets.cpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcTicketAccountMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcNewCharacterMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+    <ClCompile Include="IpcDeletedCharacterMessage.cpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Logger.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryReader.hpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClInclude>
+    <ClInclude Include="uint64.h">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="int64.h">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="binary64.h">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="types.h">
+      <Filter>Fichiers sources\io\types</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="imessage.h">
+      <Filter>Fichiers sources\network\messages</Filter>
+    </ClInclude>
+    <ClInclude Include="ByteOrder.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanByteWrapper.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicPingMessage.hpp">
+      <Filter>Fichiers sources\network\messages\common</Filter>
+    </ClInclude>
+    <ClInclude Include="Processor.hpp">
+      <Filter>Fichiers sources\network</Filter>
+    </ClInclude>
+    <ClInclude Include="ProtocolRequired.hpp">
+      <Filter>Fichiers sources\network\messages\handshake</Filter>
+    </ClInclude>
+    <ClInclude Include="HelloConnectMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="RawDataMessage.hpp">
+      <Filter>Fichiers sources\network\messages\security</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentificationMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="IType.hpp">
+      <Filter>Fichiers sources\network\types</Filter>
+    </ClInclude>
+    <ClInclude Include="VersionExtended.hpp">
+      <Filter>Fichiers sources\network\types\version</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.hpp">
+      <Filter>Fichiers sources\network\types\version</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthHandler.hpp">
+      <Filter>Fichiers d%27en-tête\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentificationSuccessMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="GameServerInformations.hpp">
+      <Filter>Fichiers sources\network\types\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentificationFailedMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerStatus.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentificationFailureReason.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldsServers.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryWriter.hpp">
+      <Filter>Fichiers sources\io</Filter>
+    </ClInclude>
+    <ClInclude Include="Locker.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldsCharacters.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="IPC.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="IPCClient.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.hpp">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerStatusUpdateMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerSelectionMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectedServerDataMessage.hpp">
+      <Filter>Fichiers sources\network\messages\connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Tickets.hpp">
+      <Filter>Fichiers sources\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcTicketAccountMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcNewCharacterMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+    <ClInclude Include="IpcDeletedCharacterMessage.hpp">
+      <Filter>Fichiers sources\network\messages\ipc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
