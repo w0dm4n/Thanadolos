@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thanadolos Auth", "Thanadolos Auth\Thanadolos Auth.vcxproj", "{1D06509D-166D-48E9-8F76-60278EC432CE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Thanadolos World", "Thanadolos World\Thanadolos World.vcxproj", "{C9303308-2DC4-4615-8C51-8389A6E02859}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Debug|x64.ActiveCfg = Debug|x64
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Debug|x64.Build.0 = Debug|x64
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Debug|x86.Build.0 = Debug|Win32
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Release|x64.ActiveCfg = Release|x64
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Release|x64.Build.0 = Release|x64
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Release|x86.ActiveCfg = Release|Win32
+		{1D06509D-166D-48E9-8F76-60278EC432CE}.Release|x86.Build.0 = Release|Win32
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Debug|x64.ActiveCfg = Debug|x64
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Debug|x64.Build.0 = Debug|x64
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Debug|x86.ActiveCfg = Debug|Win32
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Debug|x86.Build.0 = Debug|Win32
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Release|x64.ActiveCfg = Release|x64
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Release|x64.Build.0 = Release|x64
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Release|x86.ActiveCfg = Release|Win32
+		{C9303308-2DC4-4615-8C51-8389A6E02859}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
