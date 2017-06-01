@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50520
 File Encoding         : 65001
 
-Date: 2017-05-18 21:59:43
+Date: 2017-06-01 15:27:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,7 +52,7 @@ CREATE TABLE `worlds_characters` (
 -- ----------------------------
 -- Records of worlds_characters
 -- ----------------------------
-INSERT INTO `worlds_characters` VALUES ('9', '1', '1', '3');
+INSERT INTO `worlds_characters` VALUES ('9', '1', '1', '2');
 INSERT INTO `worlds_characters` VALUES ('11', '4', '1', '1');
 
 -- ----------------------------
