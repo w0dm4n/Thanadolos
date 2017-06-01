@@ -40,17 +40,16 @@ DWORD Save::handleSave(Save&)
 
 	while (true)
 	{
-		Sleep(this->timer);
-
 		savers.push_back(Saver(this->database->_characters, this->database));
 		savers.push_back(Saver(this->database->_characters_stats, this->database));
 		savers.push_back(Saver(this->database->_characters_spells, this->database));
 		savers.push_back(Saver(this->database->_characters_shortcuts, this->database));
 
+		Sleep(this->timer);
 		Logger::Infos("Starting the save on world server...");
 		this->world->sendToAllOnlineClients(TextInformationMessage(1, 164, params));
-
-		/*this->saveCharacters();
+		/*
+		this->saveCharacters();
 		this->saveCharactersStats();
 		this->saveCharactersSpells();
 		*/

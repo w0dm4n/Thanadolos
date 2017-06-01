@@ -16,7 +16,7 @@ void CommandsManager::manageCommand(std::string content, WorldClient &client)
 
 	if (!strcmp(command, "help"))
 	{
-		client.character->replyText("<h2>Commandes disponibles</h2> : <br/>");
+		client.character->replyText("Commandes disponibles : <br/>");
 		for (int i = 0; i < commands.size(); i++)
 		{
 			if ((int)client.getAccount().get("level") >= commands[i].role)
