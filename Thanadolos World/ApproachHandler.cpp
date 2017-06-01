@@ -120,7 +120,7 @@ void ApproachHandler::sendCharactersList(WorldClient &client)
 	int i = 0;
 	while (i < records.size())
 	{
-		Character current(records[i], client.getAccount(), client);
+		Character current(records[i], client.getAccount(), client, false);
 		characters.push_back(current.getCharacterBaseInformations());
 		i++;
 	}

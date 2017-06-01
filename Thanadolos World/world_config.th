@@ -1,0 +1,31 @@
+/*****************************************\
+*				                          *
+*          Thanadolos World               *
+*					                      *
+\*****************************************/
+
+/* NETWORK *\
+WORLD_HOST("127.0.0.1")
+WORLD_PORT("5500")
+IPC_HOST("127.0.0.1")
+IPC_PORT("3300")
+IPC_TIMER("10")
+
+/* DATABASE *\
+DATABASE_HOST("127.0.0.1")
+DATABASE_USER("root")
+DATABASE_PASSWORD("")
+DATABASE_NAME("thanadolos_world")
+SWF_PATH("C:/Users/W0dm4/Documents/Visual Studio 2017/Projects/Thanadolos/x64/Debug/SWF")
+
+/* OPTIONS *\
+SERVER_ID("1")
+MAX_CHARACTERS_PER_ACCOUNT("5")
+START_LEVEL("100")
+START_KAMAS("1000000")
+START_MAP("154010883")
+START_CELL("383")
+MAX_AP("12")
+MAX_MP("6")
+SAVE_TIMER("60");
+WELCOME_MESSAGE("Welcome on Thanadolos alpha v1.0.0 !")

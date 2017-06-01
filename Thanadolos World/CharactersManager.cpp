@@ -110,7 +110,7 @@ uint CharactersManager::getDefaultLook(camp::UserObject breedRecord, camp::UserO
 
 uint CharactersManager::getCosmeticHead(WorldClient &client, camp::UserObject characterRecord)
 {
-	camp::UserObject headRecord = client.getWorld()->getDatabase()->getHeadsRecord(characterRecord.get("CosmeticId"));
+	camp::UserObject headRecord = client.getWorld()->getDatabase()->getRecordObject(characterRecord.get("CosmeticId"), "HeadsRecord");
 	return (headRecord.pointer() != NULL) ? headRecord.get("skins") : 0;
 }
 
@@ -205,7 +205,7 @@ int CharactersManager::getStatsCostFromValue(int statValue, std::string value)
 
 int CharactersManager::getStatsCost(int statId, WorldClient &client)
 {
-	camp::UserObject breedRecord = client.getWorld()->getDatabase()->getBreedsRecord(client.character->getCharacterRecord().get("Breed"));
+	camp::UserObject breedRecord = client.getWorld()->getDatabase()->getRecordObject(client.character->getCharacterRecord().get("Breed"), "BreedsRecord");
 	switch (statId)
 	{
 		case StatsBoostTypeEnum::Vitality:
@@ -236,4 +236,16 @@ int CharactersManager::getStatsCost(int statId, WorldClient &client)
 			return -1;
 		break;
 	}
+}
+
+std::vector<int> CharactersManager::getBreedSpells(int breedId, Database *database)
+{
+	std::vector<int> spells;
+
+	camp::UserObject breed = database->getRecordObject(breedId, "BreedsRecord");
+	std::string breedSpells = breed.get("breedSpellsId");
+	Split spells_database = Utils::split(breedSpells, ',');
+	for (int i = 0; i < spells_database.size(); i++)
+		spells.push_back(std::stoi(spells_database[i]));
+	return spells;
 }

@@ -22,6 +22,15 @@
 #include "StatsBoostTypeEnum.hpp"
 #include "StatsUpgradeResultEnum.hpp"
 
+#include "SpellModifyRequestMessage.hpp"
+#include "SpellModifySuccessMessage.hpp"
+#include "SpellModifyFailureMessage.hpp"
+
+#include "ShortcutBarAddRequestMessage.hpp"
+#include "ShortcutBarRemoveRequestMessage.hpp"
+#include "ShortcutBarSwapRequestMessage.hpp"
+#include "ShortcutBarEnum.hpp"
+
 #include "Character.hpp"
 #include "CharactersManager.hpp"
 #include "Map.hpp"
@@ -35,6 +44,10 @@ public:
 	static void GameMapMovementRequestMessageHandler(BinaryReader &reader, WorldClient &client);
 	static void ChangeMapMessageHandler(BinaryReader &reader, WorldClient &client);
 	static void StatsUpgradeRequestMessageHandler(BinaryReader &reader, WorldClient &client);
+	static void SpellModifyRequestMessageHandler(BinaryReader &reader, WorldClient &client);
+	static void ShortcutBarAddRequestMessageHandler(BinaryReader &reader, WorldClient &client);
+	static void ShortcutBarRemoveRequestMessageHandler(BinaryReader &reader, WorldClient &client);
+	static void ShortcutBarSwapRequestMessageHandler(BinaryReader &reader, WorldClient &client);
 	static void sendWelcomeMessage(WorldClient &client);
 };
 

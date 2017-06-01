@@ -1,10 +1,10 @@
 #include "Globals.h"
 #include "Character.hpp"
 
-Character::Character(camp::UserObject characterRecord, camp::UserObject accountRecord, WorldClient &client)
+Character::Character(camp::UserObject characterRecord, camp::UserObject accountRecord, WorldClient &client, bool isIngame)
 	: characterRecord(characterRecord), accountRecord(accountRecord), client(client), stats(this)
 {
-	this->loadDatas();
+	this->loadDatas(isIngame);
 	this->direction = 1;
 	this->regenTimestamp = 0;
 }
@@ -19,8 +19,165 @@ void Character::setFirstContext(bool context)
 	this->firstContext = context;
 }
 
-void Character::loadDatas()
+void Character::loadSpells()
 {
+	std::vector<camp::UserObject> baseCharacterSpells = this->client.getWorld()->getDatabase()->getCharacterSpells(this->characterRecord.get("Id"));
+	for (int i = 0; i < baseCharacterSpells.size(); i++)
+	{
+		Spell current = Spell(baseCharacterSpells[i], this->client.getWorld()->getDatabase());
+		if (current.spellLevel.levelRecord.pointer() != NULL)
+			this->spells.push_back(current);
+		else
+			Logger::Error("Spell Level of spell " + std::to_string((int)current.spellRecord.get("id")) + " is not existing, can't load this spell !");
+	}
+}
+
+void Character::loadShortcuts()
+{
+	this->shortcuts = this->client.getWorld()->getDatabase()->getCharacterShortcuts(this->characterRecord.get("Id"));
+}
+
+camp::UserObject &Character::getShortcut(int slotId, int typeId)
+{
+	camp::UserObject empty;
+	for (int i = 0; i < this->shortcuts.size(); i++)
+	{
+		if ((int)this->shortcuts[i].get("SlotId") == slotId && (int)this->shortcuts[i].get("TypeId") == typeId)
+			return this->shortcuts[i];
+	}
+	return empty;
+}
+
+std::vector<Shortcut*> Character::getItemsShortcut()
+{
+	std::vector<Shortcut*> items;
+	for (int i = 0; i < this->shortcuts.size(); i++)
+	{
+		if ((int)this->shortcuts[i].get("TypeId") == ShortcutBarEnum::GENERAL_SHORTCUT_BAR)
+			items.push_back(new ShortcutObjectItem(this->shortcuts[i].get("SlotId"), this->shortcuts[i].get("ObjectUID"), this->shortcuts[i].get("ObjectId")));
+	}
+	return items;
+}
+
+std::vector<Shortcut*> Character::getSpellsShortcut()
+{
+	std::vector<Shortcut*> spells;
+	for (int i = 0; i < this->shortcuts.size(); i++)
+	{
+		if ((int)this->shortcuts[i].get("TypeId") == ShortcutBarEnum::SPELL_SHORTCUT_BAR)
+			spells.push_back(new ShortcutSpell(this->shortcuts[i].get("SlotId"), this->shortcuts[i].get("ObjectId")));
+	}
+	return spells;
+}
+
+void Character::sendShortcuts()
+{
+	client.sendMessage(ShortcutBarContentMessage(ShortcutBarEnum::SPELL_SHORTCUT_BAR, this->getSpellsShortcut()));
+	client.sendMessage(ShortcutBarContentMessage(ShortcutBarEnum::GENERAL_SHORTCUT_BAR, this->getItemsShortcut()));
+}
+
+void Character::removeShortcut(int id)
+{
+	int i = 0;
+	while (i < this->shortcuts.size())
+	{
+		if (this->shortcuts[i].pointer() != NULL)
+		{
+			if ((int)this->shortcuts[i].get("Id") == id)
+				this->shortcuts.erase(this->shortcuts.begin() + i);
+		}
+		i++;
+	}
+}
+
+bool Character::removeShortcut(int slotId, int typeId)
+{
+	camp::UserObject shortcut = this->getShortcut(slotId, typeId);
+	if (this->client.getWorld()->getDatabase()->removeShortcut(shortcut.get("Id")))
+	{
+		this->removeShortcut(shortcut.get("Id"));
+		this->sendShortcuts();
+	}
+	return true;
+}
+
+void Character::swapShortcuts(int type, int first, int second)
+{
+	camp::UserObject firstShortcut = this->getShortcut(first, type);
+	camp::UserObject secondShortcut = this->getShortcut(second, type);
+	
+	if (firstShortcut.pointer() != NULL && secondShortcut.pointer() != NULL)
+	{
+		int secondObjectId = secondShortcut.get("ObjectId");
+		int secondObjectUID = secondShortcut.get("ObjectUID");
+		int secondTypeId = secondShortcut.get("TypeId");
+
+		secondShortcut.set("ObjectId", (int)firstShortcut.get("ObjectId"));
+		secondShortcut.set("ObjectUID", (int)firstShortcut.get("ObjectUID"));
+		secondShortcut.set("TypeId", (int)firstShortcut.get("TypeId"));
+
+		firstShortcut.set("ObjectId", secondObjectId);
+		firstShortcut.set("ObjectUID", secondObjectUID);
+		firstShortcut.set("TypeId", secondTypeId);
+	}
+	else if (firstShortcut.pointer() != NULL)
+		firstShortcut.set("SlotId", second);
+	else if (secondShortcut.pointer() != NULL)
+		secondShortcut.set("SlotId", first);
+	this->sendShortcuts();
+}
+
+bool Character::addShortcut(ShortcutSpell *spell)
+{
+	if (this->getShortcut(spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR).pointer() == NULL)
+	{
+		camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, spell->spellId, 0,
+			spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+		if (newShortcut.pointer() != NULL)
+		{
+			this->shortcuts.push_back(newShortcut);
+			this->sendShortcuts();
+		}
+	}
+	else
+	{
+		camp::UserObject current = this->getShortcut(spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+		current.set("ObjectId", spell->spellId);
+		this->sendShortcuts();
+	}
+
+	return true;
+}
+
+bool Character::addShortcut(ShortcutObjectItem *item)
+{
+	if (this->getShortcut(item->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR).pointer() == NULL)
+	{
+		camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, item->itemGID,
+			item->itemUID, item->slot, ShortcutBarEnum::GENERAL_SHORTCUT_BAR);
+		if (newShortcut.pointer() != NULL)
+		{
+			this->shortcuts.push_back(newShortcut);
+			this->sendShortcuts();
+		}
+	}
+	else
+	{
+		camp::UserObject current = this->getShortcut(item->slot, ShortcutBarEnum::GENERAL_SHORTCUT_BAR);
+		current.set("ObjectId", item->itemGID);
+		current.set("ObjectUID", item->itemUID);
+		this->sendShortcuts();
+	}
+	return true;
+}
+
+void Character::loadDatas(bool isIngame)
+{
+	if (isIngame)
+	{
+		this->loadSpells();
+		this->loadShortcuts();
+	}
 	this->getSkinsBase();
 	this->map = NULL;
 }
@@ -65,7 +222,7 @@ GameRolePlayCharacterInformations *Character::getGameRolePlayCharacterInformatio
 
 void Character::getSkinsBase()
 {
-	camp::UserObject breedRecord = client.getWorld()->getDatabase()->getBreedsRecord(this->characterRecord.get("Breed"));
+	camp::UserObject breedRecord = client.getWorld()->getDatabase()->getRecordObject(this->characterRecord.get("Breed"), "BreedsRecord");
 	if (breedRecord.pointer() != NULL)
 	{
 		this->defaultLook = CharactersManager::getDefaultLook(breedRecord, characterRecord);
@@ -243,7 +400,17 @@ std::vector<CharacterSpellModification>					Character::getCharacterSpellModifica
 
 void Character::sendStats()
 {
+	client.character->stopRegenLife(false);
 	this->client.sendMessage(CharacterStatsListMessage(this->getCharacterCharacteristicsInformations()));
+	client.character->startRegenLife(false);
+}
+
+void Character::sendSpells()
+{
+	std::vector<SpellItem> spells;
+	for (int i = 0; i < this->spells.size(); i++)
+		spells.push_back(SpellItem(this->spells[i].spellRecord.get("id"), this->spells[i].spellLevel.levelRecord.get("grade")));
+	client.sendMessage(SpellListMessage(true, spells));
 }
 
 CharacterCharacteristicsInformations Character::getCharacterCharacteristicsInformations()
@@ -353,4 +520,24 @@ void Character::replyError(std::string message)
 	params.push_back(content);
 
 	this->replyLangsMessage(0, 0, params);
+}
+
+bool Character::hasSpellId(int spellId)
+{
+	for (int i = 0; i < this->spells.size(); i++)
+	{
+		if ((int) this->spells[i].spellCharacterRecord.get("SpellId") == spellId)
+			return true;
+	}
+	return false;
+}
+
+Spell *Character::getSpellById(int spellId)
+{
+	for (int i = 0; i < this->spells.size(); i++)
+	{
+		if ((int) this->spells[i].spellCharacterRecord.get("SpellId") == spellId)
+			return &this->spells[i];
+	}
+	return NULL;
 }

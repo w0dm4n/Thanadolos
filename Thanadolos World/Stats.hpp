@@ -54,8 +54,11 @@ public:
 	int							getBaseIntelligence();
 	int							getItemsIntelligence();
 	int							getTotalIntelligence();
+	int							getSpellsPoints();
 	void						increaseBaseStats(int statId);
 	void						decreaseStatsPoints(int value);
+	void						increaseSpellsPoints(int value);
+	void						decreaseSpellsPoints(int value);
 	void						updateCurrentLife(int lifePoints);
 
 	int getCurrentLife();

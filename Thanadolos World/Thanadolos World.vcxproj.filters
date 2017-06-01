@@ -148,6 +148,33 @@
     <Filter Include="Fichiers sources\network\messages\chat">
       <UniqueIdentifier>{23eb8ca1-09b3-4468-b349-3b8e30916260}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\world\spells">
+      <UniqueIdentifier>{e469f8c2-9753-425e-9d6c-10ff4068a179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\data">
+      <UniqueIdentifier>{5f27c8b6-fe08-4e1c-b47e-108283883753}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\data\items">
+      <UniqueIdentifier>{fb08d83b-edd1-44b8-a60a-d5464e4ce44b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\inventory">
+      <UniqueIdentifier>{6e01af3a-a664-4d40-9c04-4ad1e7a655c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\inventory\spells">
+      <UniqueIdentifier>{a6c8c782-a84b-4aa7-b609-e5a4e2f8d965}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\context\roleplay\spells">
+      <UniqueIdentifier>{b83a57c6-23f1-49bf-9694-36d8f7c16b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\types\game\shortcuts">
+      <UniqueIdentifier>{ca61b450-d285-434b-9733-9ec5a4168abe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\shortcuts">
+      <UniqueIdentifier>{826b9405-66cd-477d-98fe-3ce20daaa1a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\authorized">
+      <UniqueIdentifier>{4a7dfb34-61b0-45a3-a2c0-5b570d3e1cce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -506,6 +533,69 @@
     </ClCompile>
     <ClCompile Include="ChatClientPrivateMessage.cpp">
       <Filter>Fichiers sources\network\messages\chat</Filter>
+    </ClCompile>
+    <ClCompile Include="Spell.cpp">
+      <Filter>Fichiers sources\world\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellLevel.cpp">
+      <Filter>Fichiers sources\world\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellItem.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\inventory\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellModifyRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellModifySuccessMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellModifyFailureMessage.cpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Saver.cpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Shortcut.cpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutBarAddRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutSpell.cpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutObjectItem.cpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutBarContentMessage.cpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutBarRemoveRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutBarRemovedMessage.cpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutBarSwapRequestMessage.cpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminCommandMessage.cpp">
+      <Filter>Fichiers sources\network\messages\authorized</Filter>
+    </ClCompile>
+    <ClCompile Include="AdminHandler.cpp">
+      <Filter>Fichiers sources\handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandsManager.cpp">
+      <Filter>Fichiers sources\managers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -923,6 +1013,81 @@
     <ClInclude Include="ChatClientPrivateMessage.hpp">
       <Filter>Fichiers sources\network\messages\chat</Filter>
     </ClInclude>
+    <ClInclude Include="SpellsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSpellsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="Spell.hpp">
+      <Filter>Fichiers sources\world\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellLevel.hpp">
+      <Filter>Fichiers sources\world\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellsLevelsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellItem.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\inventory\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellModifyRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellModifySuccessMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellModifyFailureMessage.hpp">
+      <Filter>Fichiers sources\network\messages\context\roleplay\spells</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Saver.hpp">
+      <Filter>Fichiers sources\orm</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterShortcutsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="Shortcut.hpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutBarAddRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutSpell.hpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutObjectItem.hpp">
+      <Filter>Fichiers sources\network\types\game\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutBarContentMessage.hpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutBarRemoveRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutBarRemovedMessage.hpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutBarSwapRequestMessage.hpp">
+      <Filter>Fichiers sources\network\messages\shortcuts</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminCommandMessage.hpp">
+      <Filter>Fichiers sources\network\messages\authorized</Filter>
+    </ClInclude>
+    <ClInclude Include="AdminHandler.hpp">
+      <Filter>Fichiers d%27en-tête\handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandsManager.hpp">
+      <Filter>Fichiers d%27en-tête\managers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="int64.hpp">
@@ -930,6 +1095,9 @@
     </None>
     <None Include="CharacterBasicMinimalInformations.cpp">
       <Filter>Fichiers sources\network\types\character</Filter>
+    </None>
+    <None Include="ShortcutBarEnum.hpp">
+      <Filter>Fichiers sources\network\enums</Filter>
     </None>
   </ItemGroup>
 </Project>

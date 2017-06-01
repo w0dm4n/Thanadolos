@@ -11,6 +11,7 @@
 #include "ChatServerCopyMessage.hpp"
 #include "ChatClientPrivateMessage.hpp"
 #include "AccountRole.hpp"
+#include "CommandsManager.hpp"
 
 class ChatHandler
 {

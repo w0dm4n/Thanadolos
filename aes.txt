@@ -1,0 +1,64 @@
+			ByteArray buffer;
+			BinaryWriter writer(buffer);
+			writer.writeByte(ticketString.length());
+			writer.writeUTFBytes(ticketString.c_str(), ticketString.length());
+
+			ByteArray aesArray = client.getAES();
+			byte key[AES::MAX_KEYLENGTH];
+			byte iv[AES::BLOCKSIZE];
+			int i = 0;
+			while (i < aesArray.size())
+			{
+				key[i] = aesArray[i];
+				i++;
+			}
+			i = 0;
+			while (i < (aesArray.size() / 2))
+			{
+				iv[i] = aesArray[i];
+				i++;
+			}
+			std::vector<byte> plain, cipher, recover;
+			HexEncoder encoder(new FileSink(std::cout));
+
+			i = 0;
+			while (i < buffer.size())
+				plain.push_back(buffer[i++]);
+			CBC_Mode<AES>::Encryption enc;
+			enc.SetKeyWithIV(key, sizeof(key), iv, sizeof(iv));
+
+			cipher.resize(plain.size() + AES::BLOCKSIZE);
+			ArraySink cs(&cipher[0], cipher.size());
+
+			ArraySource(plain.data(), plain.size(), true,
+				new StreamTransformationFilter(enc, new Redirector(cs)));
+			cipher.resize(cs.TotalPutLength());
+
+			std::cout << "Ticket Encrypted : ";
+			encoder.Put(cipher.data(), cipher.size());
+			encoder.MessageEnd();
+			std::cout << std::endl;
+
+			CBC_Mode<AES>::Decryption dec;
+			dec.SetKeyWithIV(key, sizeof(key), iv, sizeof(iv));
+
+			recover.resize(cipher.size());
+			ArraySink rs(&recover[0], recover.size());
+
+			ArraySource(cipher.data(), cipher.size(), true,
+				new StreamTransformationFilter(dec, new Redirector(rs)));
+
+			recover.resize(rs.TotalPutLength());
+
+			ByteArray mdr;
+			i = 0;
+			while (i < recover.size())
+				mdr.push_back(recover[i++]);
+			
+			BinaryReader reader(mdr);
+			char test = reader.readByte();
+			std::string tmp = reader.readUTFBytes((uint)test);
+			i = 0;
+			
+			std::cout << "decrypted:" << tmp;
+			*/

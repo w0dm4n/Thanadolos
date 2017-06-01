@@ -188,7 +188,6 @@ int	Stats::getTotalAgility()
 	return this->getBaseAgility() + this->getItemsAgility();
 }
 
-
 int Stats::getBaseIntelligence()
 {
 	return this->statsRecord.get("BaseIntelligence");
@@ -202,6 +201,11 @@ int Stats::getItemsIntelligence()
 int	Stats::getTotalIntelligence()
 {
 	return this->getBaseIntelligence() + this->getItemsIntelligence();
+}
+
+int Stats::getSpellsPoints()
+{
+	return this->statsRecord.get("SpellsPoints");
 }
 
 CharacterBaseCharacteristic Stats::getCharacteristicPP()
@@ -292,6 +296,16 @@ void Stats::increaseBaseStats(int statId)
 void Stats::decreaseStatsPoints(int value)
 {
 	this->statsRecord.set("StatsPoints", ((int) this->statsRecord.get("StatsPoints") - value));
+}
+
+void Stats::increaseSpellsPoints(int value)
+{
+	this->statsRecord.set("SpellsPoints", ((int) this->statsRecord.get("SpellsPoints") + value));
+}
+
+void Stats::decreaseSpellsPoints(int value)
+{
+	this->statsRecord.set("SpellsPoints", ((int) this->statsRecord.get("SpellsPoints") - value));
 }
 
 void Stats::updateCurrentLife(int lifePoints)

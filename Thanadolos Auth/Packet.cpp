@@ -50,7 +50,10 @@ void Packet::serialize(IMessage& message, ByteArray& buffer)
 		writer.writeUShort(static_cast<ushort>(_length));
 		break;
 	case 3:
-		// TODO: Write for 3 bytes length
+		writer.writeByte((_length >> 16 & 255));
+		writer.writeByte((_length >> 8 & 255));
+		writer.writeByte((_length & 255));
+		//writer.writeVarShort((_length & 65535));
 		break;
 	default:
 		break;

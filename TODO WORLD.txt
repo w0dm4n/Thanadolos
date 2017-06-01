@@ -1,0 +1,2 @@
+TODO:
+Check current cell if walkable when connecting

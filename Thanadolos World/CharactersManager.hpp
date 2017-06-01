@@ -27,6 +27,7 @@ public:
 	static camp::UserObject getExperienceLevelNext(WorldClient &client);
 	static int getStatsCostFromValue(int statValue, std::string data);
 	static int getStatsCost(int statId, WorldClient &client);
+	static std::vector<int> getBreedSpells(int breedId, Database *database);
 };
 
 #endif

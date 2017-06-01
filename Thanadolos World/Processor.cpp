@@ -5,6 +5,7 @@
 #include "ApproachHandler.hpp"
 #include "GameHandler.hpp"
 #include "ChatHandler.hpp"
+#include "AdminHandler.hpp"
 
 #include "AuthenticationTicketMessage.hpp"
 #include "CharactersListRequestMessage.hpp"
@@ -20,6 +21,11 @@
 #include "StatsUpgradeRequestMessage.hpp"
 #include "ChatClientMultiMessage.hpp"
 #include "ChatClientPrivateMessage.hpp"
+#include "SpellModifyRequestMessage.hpp"
+#include "ShortcutBarAddRequestMessage.hpp"
+#include "ShortcutBarRemoveRequestMessage.hpp"
+#include "ShortcutBarSwapRequestMessage.hpp"
+#include "AdminCommandMessage.hpp"
 
 bool Processor::processPacket(Packet &packet, WorldClient &client)
 {
@@ -27,7 +33,7 @@ bool Processor::processPacket(Packet &packet, WorldClient &client)
 	std::list<Handler*> handlers;
 
 	/*
-		Approach Handler
+	**	Approach Handler
 	*/
 
 	handlers.push_back(new Handler(AuthenticationTicketMessage::id, &ApproachHandler::AuthenticationTicketMessageHandler, "AuthenticationTicketMessage"));
@@ -39,7 +45,7 @@ bool Processor::processPacket(Packet &packet, WorldClient &client)
 	handlers.push_back(new Handler(CharacterSelectionMessage::id, &ApproachHandler::CharacterSelectionMessageHandler, "CharacterSelectionMessage"));
 
 	/*
-		Game Handler
+	**	Game Handler
 	*/
 
 	handlers.push_back(new Handler(GameContextCreateRequestMessage::id, &GameHandler::GameContextCreateRequestMessageHandler, "GameContextCreateRequestMessage"));
@@ -47,11 +53,21 @@ bool Processor::processPacket(Packet &packet, WorldClient &client)
 	handlers.push_back(new Handler(GameMapMovementRequestMessage::id, &GameHandler::GameMapMovementRequestMessageHandler, "GameMapMovementRequestMessage"));
 	handlers.push_back(new Handler(ChangeMapMessage::id, &GameHandler::ChangeMapMessageHandler, "ChangeMapMessageHandler"));
 	handlers.push_back(new Handler(StatsUpgradeRequestMessage::id, &GameHandler::StatsUpgradeRequestMessageHandler, "StatsUpgradeRequestMessage"));
-
+	handlers.push_back(new Handler(SpellModifyRequestMessage::id, &GameHandler::SpellModifyRequestMessageHandler, "SpellModifyRequestMessage"));
+	handlers.push_back(new Handler(ShortcutBarAddRequestMessage::id, &GameHandler::ShortcutBarAddRequestMessageHandler, "ShortcutBarAddRequestMessage"));
+	handlers.push_back(new Handler(ShortcutBarRemoveRequestMessage::id, &GameHandler::ShortcutBarRemoveRequestMessageHandler, "ShortcutBarRemoveRequestMessage"));
+	handlers.push_back(new Handler(ShortcutBarSwapRequestMessage::id, &GameHandler::ShortcutBarSwapRequestMessageHandler, "ShortcutBarSwapRequestMessage"));
 
 	/*
-		Chat Handler
+	**	Admin Handler
 	*/
+
+	handlers.push_back(new Handler(5662, &AdminHandler::AdminQuietCommandMessageHandler, "AdminQuietCommandMessage"));
+
+	/*
+	**	Chat Handler
+	*/
+
 	handlers.push_back(new Handler(ChatClientMultiMessage::id, &ChatHandler::ChatClientMultiMessageHandler, "ChatClientMultiMessage"));
 	handlers.push_back(new Handler(ChatClientPrivateMessage::id, &ChatHandler::ChatClientPrivateMessageHandler, "ChatClientPrivateMessage"));
 

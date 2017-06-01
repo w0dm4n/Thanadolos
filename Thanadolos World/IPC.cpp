@@ -40,10 +40,7 @@ void IPC::sendToAuth(IMessage &message)
 
 void IPC::setSynchronized()
 {
-	std::string msg = "IPC synchronized with auth server on port ";
-	char buffer[20];
-	itoa(this->port, buffer, 10);
-	msg += buffer;
+	std::string msg = "IPC synchronized with auth server on port " + std::to_string(this->port);
 	Logger::Infos(msg, 13);
 	this->synchronized = true;
 }
@@ -76,12 +73,7 @@ void IPC::Synchronize(World &world)
 	}
 	if ((connect(sock, (SOCKADDR *)&this->Addr, sizeof(this->Addr))) == INVALID_SOCKET)
 	{
-		std::string msg = "Can't link world to auth server... (will try again in ";
-		char buffer[20];
-		itoa((this->timer / 1000), buffer, 10);
-		msg += buffer;
-		msg += " seconds)";
-		Logger::Error(msg);
+		Logger::Error("Can't link world to auth server... (will try again in " + std::to_string((this->timer / 1000)) + " seconds)");
 		return;
 	}
 	

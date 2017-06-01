@@ -1,0 +1,31 @@
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include
+%(AdditionalIncludeDirectories)
+
+
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs
+C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib
+%(AdditionalLibraryDirectories)
+
+_MBCS
+_CRT_NONSTDC_NO_WARNINGS
+_CRT_SECURE_NO_WARNINGS
+_WINSOCK_DEPRECATED_NO_WARNINGS
+
+		try
+		{
+			SAConnection &connection = db->getConnection();
+			SACommand cmd(&connection);
+			cmd.setCommandText("insert into accounts (Account,Password) values (:1, :2)");
+			cmd.Param(1).setAsString() = "Hello";
+			cmd.Param(2).setAsString() = "Hi !";
+			cmd.Execute();
+		}
+		catch (SAException& x)
+		{
+			Logger::Error("An error occured while trying to load the database", 12, x.ErrText().GetMultiByteChars());
+		}

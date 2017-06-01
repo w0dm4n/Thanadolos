@@ -10,7 +10,7 @@ Int64::Int64(uint _low, uint _high) :
 
 Int64 Int64::fromNumber(double value)
 {
-	return Int64(static_cast<uint>(value), static_cast<uint>(std::floor(value / 4294967296)));
+	return Int64(static_cast<uint>(value), value > 0 ? static_cast<uint>(std::floor(value / 4294967296)) : 0);
 }
 
 Int64 Int64::parseInt64(std::string str, uint radix)
@@ -29,7 +29,7 @@ uint Int64::getHigh()
 	return internalHigh;
 }
 
-double Int64::toNumber()
+long long int Int64::toNumber()
 {
 	return (getHigh() * 4294967296) + low;
 }

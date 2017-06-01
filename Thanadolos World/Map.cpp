@@ -14,9 +14,9 @@ Map::Map(int mapId, Database *db) : db(db)
 
 void Map::loadRecord(int mapId)
 {
-	this->mapRecord = db->getMapsRecord(mapId);
-	this->mapPositionRecord = db->getMapsPosition(mapId);
-	this->mapSubareaRecord = db->getMapsSubareas(this->mapRecord.get("subareaId"));
+	this->mapRecord = db->getRecordObject(mapId, "MapsRecord");
+	this->mapPositionRecord = db->getRecordObject(mapId, "MapsPositionsRecord");
+	this->mapSubareaRecord = db->getRecordObject(this->mapRecord.get("subareaId"), "MapsSubareasRecord");
 }
 
 void	Map::enterMap(WorldClient &client)

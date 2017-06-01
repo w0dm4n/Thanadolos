@@ -13,11 +13,7 @@ WorldClient::WorldClient(World *world, SOCKET Socket, SOCKADDR_IN WorldClientAdd
 
 	std::string msg = "New client (";
 	msg += inet_ntoa(this->getAddr().sin_addr);
-	msg += ":";
-	char buffer[20];
-	itoa(ntohs(this->getAddr().sin_port), buffer, 10);
-	msg += buffer;
-	msg += ") connected on World server.";
+	msg += ":" + std::to_string(ntohs(this->getAddr().sin_port)) + ") connected on World server.";
 	Logger::Infos(msg, 14);
 }
 
@@ -86,11 +82,7 @@ WorldClient::~WorldClient()
 
 	std::string msg = "Client (";
 	msg += inet_ntoa(this->getAddr().sin_addr);
-	msg += ":";
-	char buffer[20];
-	itoa(ntohs(this->getAddr().sin_port), buffer, 10);
-	msg += buffer;
-	msg += ") disconnected from World server.";
+	msg += ":" + std::to_string(ntohs(this->getAddr().sin_port)) + ") disconnected from World server.";
 	Logger::Infos(msg, 13);
 }
 
@@ -144,7 +136,7 @@ void WorldClient::buildCharacter(int characterId)
 	{
 		camp::UserObject character = this->Characters[i];
 		if ((int)character.get("Id") == characterId)
-			this->character = new Character(character, this->Account, *this);
+			this->character = new Character(character, this->Account, *this, true);
 		i++;
 	}
 }

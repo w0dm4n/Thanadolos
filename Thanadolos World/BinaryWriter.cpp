@@ -171,7 +171,6 @@ void BinaryWriter::writeVarShort(short data)
 	int c = data & 0xFFFF;
 	char byte;
 
-	// OK
 	while (c != 0)
 	{
 		byte = static_cast<char>(c & MASK_01111111);
@@ -188,9 +187,6 @@ void BinaryWriter::writeVarShort(short data)
 
 void BinaryWriter::writeVarLong(double data)
 {
-	if (data > 4294967295)
-		data = 4294967295;
-	//static cast uint to long long int todo
 	Int64 val = Int64::fromNumber(data);
 
 	if (val.getHigh() == 0)
@@ -201,13 +197,13 @@ void BinaryWriter::writeVarLong(double data)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			writeByte(static_cast<char>(val.low & MASK_01111111));
+			writeByte(static_cast<char>(val.low & MASK_01111111 | MASK_10000000));
 			val.low = static_cast<uint>(val.low >> 7);
 		}
 
 		if ((val.getHigh() & (268435455 << 3)) == 0)
 		{
-			writeByte(static_cast<char>(val.getHigh() << 4));
+			writeByte(static_cast<char>(val.getHigh() << 4 | static_cast<char>(val.low)));
 		}
 		else
 		{
@@ -228,7 +224,7 @@ void BinaryWriter::writeInt32(uint data)
 		}
 
 		writeByte(static_cast<char>((data & MASK_01111111) | MASK_10000000));
-		data = static_cast<uint>(data >> 7);
+		data = static_cast<uint>(data >> 7);//data >>> 7
 	}
 }
 

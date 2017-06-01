@@ -16,7 +16,10 @@ void GameHandler::GameContextCreateRequestMessageHandler(BinaryReader &reader, W
 
 	// emotes
 	
+	
+	client.character->sendSpells();
 	client.character->sendStats();
+	client.character->sendShortcuts();
 	//client.sendMessage(UpdateLifePointsMessage(42, 42));
 	client.getWorld()->teleportClient(client.character->getCharacterRecord().get("MapId"), client.character->getCharacterRecord().get("CellId"), client);
 
@@ -118,9 +121,12 @@ void GameHandler::StatsUpgradeRequestMessageHandler(BinaryReader & reader, World
 		}
 		boostPoint -= cost;
 	}
-	client.character->stopRegenLife(false);
 	client.character->sendStats();
-	client.character->startRegenLife(false);
+	if (client.character->getStats().getCurrentLife() < client.character->getStats().getMaxLife())
+	{
+		client.character->stopRegenLife(true);
+		client.character->startRegenLife(true);
+	}
 }
 
 void GameHandler::sendWelcomeMessage(WorldClient &client)
@@ -128,9 +134,105 @@ void GameHandler::sendWelcomeMessage(WorldClient &client)
 	std::vector<std::string> params;
 	client.character->replyLangsMessage(1, 89, params);
 	
-	std::string content = "<font color=\"#35C0B2\">";
+	std::string content = "<font color=\"#EEAD0E\"><b>";
 	content += client.getWorld()->getConfig()->getData("WELCOME_MESSAGE");
-	content += "</font>";
+	content += "</b></font>";
 	params.push_back(content);
 	client.sendMessage(TextInformationMessage(0, 0, params));
+}
+
+void GameHandler::SpellModifyRequestMessageHandler(BinaryReader &reader, WorldClient &client)
+{
+	SpellModifyRequestMessage message;
+	message.deserialize(reader);
+
+	
+	if (client.character->hasSpellId(message.spellId) && (message.spellLevel <= 6 && message.spellLevel >= 1))
+	{
+		Spell *spell = client.character->getSpellById(message.spellId);
+		if (spell != NULL)
+		{
+			int cost = 0;
+			int gain = 0;
+			int grade = spell->spellLevel.levelRecord.get("grade");
+			if (grade < message.spellLevel)
+			{
+				for (int i = grade; i < message.spellLevel; i++)
+					cost += i;
+			}
+			else
+			{
+				int i = (grade - 1);
+				while (i > 0)
+				{
+					gain += i;
+					if (i == message.spellLevel)
+						break;
+					i--;
+				}
+			}
+			if (cost > 0)
+			{
+				if (client.character->getStats().getSpellsPoints() >= cost)
+				{
+					if (spell->updateSpellLevel(message.spellLevel))
+					{
+						client.character->getStats().decreaseSpellsPoints(cost);
+						client.sendMessage(SpellModifySuccessMessage(message.spellId, message.spellLevel));
+						client.character->sendStats();
+					}
+					else
+						client.sendMessage(SpellModifyFailureMessage());
+				}
+				else
+					client.sendMessage(SpellModifyFailureMessage());
+			}
+			else if (gain > 0)
+			{
+				if (spell->updateSpellLevel(message.spellLevel))
+				{
+					client.character->getStats().increaseSpellsPoints(gain);
+					client.sendMessage(SpellModifySuccessMessage(message.spellId, message.spellLevel));
+					client.character->sendStats();
+				}
+				else
+					client.sendMessage(SpellModifyFailureMessage());
+			}
+		}
+		else
+			client.sendMessage(SpellModifyFailureMessage());
+	}
+}
+
+void GameHandler::ShortcutBarAddRequestMessageHandler(BinaryReader &reader, WorldClient &client)
+{
+	ShortcutBarAddRequestMessage message;
+	message.deserialize(reader);
+	
+	switch (message.barType)
+	{
+		case ShortcutBarEnum::SPELL_SHORTCUT_BAR:
+			client.character->addShortcut(dynamic_cast<ShortcutSpell*>(message.shortcut));
+		break;
+
+		case ShortcutBarEnum::GENERAL_SHORTCUT_BAR:
+			client.character->addShortcut(dynamic_cast<ShortcutObjectItem*>(message.shortcut));
+		break;
+	}
+}
+
+void GameHandler::ShortcutBarRemoveRequestMessageHandler(BinaryReader &reader, WorldClient &client)
+{
+	ShortcutBarRemoveRequestMessage message;
+	message.deserialize(reader);
+	if (client.character->getShortcut(message.slot, message.barType).pointer() != NULL)
+		client.character->removeShortcut(message.slot, message.barType);
+}
+
+void GameHandler::ShortcutBarSwapRequestMessageHandler(BinaryReader &reader, WorldClient &client)
+{
+	ShortcutBarSwapRequestMessage message;
+	message.deserialize(reader);
+
+	client.character->swapShortcuts(message.barType, message.firstSlot, message.secondSlot);
 }

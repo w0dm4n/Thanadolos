@@ -1,4 +1,5 @@
 #include "Auth.hpp"
+#include "Auth.cpp"
 #include "Logger.hpp"
 #include <SQLAPI.h>
 #include "Config.hpp"

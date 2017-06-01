@@ -1,6 +1,7 @@
 #include "Globals.h"
 #include "CustomVisitor.hpp"
 #include "Database.hpp"
+#include "Loader.hpp"
 
 void CustomVisitor::visit(const camp::SimpleProperty& property)
 {
@@ -25,6 +26,16 @@ std::string CustomVisitor::getTableNameByClassName()
 		return "maps";
 	else if (this->className == "MapsSubareasRecord")
 		return "maps_subareas";
+	else if (this->className == "SpellsRecord")
+		return "spells";
+	else if (this->className == "CharacterSpellsRecord")
+		return "characters_spells";
+	else if (this->className == "SpellsLevelsRecord")
+		return "spells_levels";
+	else if (this->className == "CharacterShortcutsRecord")
+		return "characters_shortcuts";
+	else
+		Logger::Error("Trying to get the table name of an incorrect record " + this->className + ", check the name");
 }
 
 void CustomVisitor::addToVector(camp::UserObject object, Database *db)
@@ -45,6 +56,16 @@ void CustomVisitor::addToVector(camp::UserObject object, Database *db)
 		db->_maps.push_back(object);
 	else if (this->className == "MapsSubareasRecord")
 		db->_maps_subareas.push_back(object);
+	else if (this->className == "SpellsRecord")
+		db->_spells.push_back(object);
+	else if (this->className == "CharacterSpellsRecord")
+		db->_characters_spells.push_back(object);
+	else if (this->className == "SpellsLevelsRecord")
+		db->_spells_levels.push_back(object);
+	else if (this->className == "CharacterShortcutsRecord")
+		db->_characters_shortcuts.push_back(object);
+	else
+		Logger::Error("Trying to add object to an invalid record " + this->className + ", check the name");
 }
 
 std::string CustomVisitor::getSelect(std::string tableName)
@@ -56,14 +77,7 @@ std::string CustomVisitor::getSelect(std::string tableName)
 
 void CustomVisitor::printLoaded(int loaded)
 {
-	std::string msg = "";
-	char buffer[20];
-
-	itoa(loaded, buffer, 10);
-	msg += buffer;
-	msg += " ";
-	msg += this->getTableNameByClassName();
-	msg += " loaded from database.";
+	std::string msg = std::to_string(loaded) + " " + this->getTableNameByClassName() + " loaded from database.";
 	Logger::Infos(msg);
 }
 
@@ -84,11 +98,11 @@ void CustomVisitor::setPropertyByType(camp::UserObject object, PropertyData data
 	}
 }
 
-bool CustomVisitor::loadTable(Database *database)
+bool CustomVisitor::loadTable(Database *database, Loader *loader)
 {
 	const camp::Class &meta = camp::classByName(this->className);
 
-	SACommand cmd(&database->db_con);
+	SACommand cmd(&loader->db_con);
 	cmd.setCommandText(this->getSelect(this->getTableNameByClassName()).c_str());
 	cmd.Execute();
 	int loaded = 0;

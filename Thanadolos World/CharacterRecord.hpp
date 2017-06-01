@@ -26,7 +26,6 @@ public:
 			.property("Colors_2", &CharacterRecord::getColors_2, &CharacterRecord::setColors_2)
 			.property("Colors_3", &CharacterRecord::getColors_3, &CharacterRecord::setColors_3)
 			.property("Colors_4", &CharacterRecord::getColors_4, &CharacterRecord::setColors_4);
-
 	}
 	CharacterRecord() { }
 

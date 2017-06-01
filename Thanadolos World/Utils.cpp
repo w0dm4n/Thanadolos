@@ -3,7 +3,9 @@
 
 int			Utils::getRand(int min, int max)
 {
-	int value = (rand() + time(NULL)) % max;
+	__int64 now = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+
+	int value = (rand() + now) % max;
 	value = (value < min) ? min : value;
 	return (value);
 }

@@ -51,8 +51,13 @@ void ChatHandler::ChatClientMultiMessageHandler(BinaryReader &reader, WorldClien
 	switch (message.channel)
 	{
 		case ChatActivableChannelsEnum::CHANNEL_GLOBAL:
-			client.character->getMap()->sendMap(ChatServerMessage(message.channel, message.content, Utils::getUnixTimestamp(), client.character->getCharacterRecord().get("Name"),
-				client.character->getCharacterRecord().get("Id"), client.character->getCharacterRecord().get("Name"), client.character->getAccountRecord().get("id")));
+			if (message.content[0] != '.' || message.content.length() <= 2)
+			{
+				client.character->getMap()->sendMap(ChatServerMessage(message.channel, message.content, Utils::getUnixTimestamp(), client.character->getCharacterRecord().get("Name"),
+					client.character->getCharacterRecord().get("Id"), client.character->getCharacterRecord().get("Name"), client.character->getAccountRecord().get("id")));
+			}
+			else
+				CommandsManager::manageCommand(message.content, client);
 		break;
 
 		case ChatActivableChannelsEnum::CHANNEL_SEEK:

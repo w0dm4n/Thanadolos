@@ -28,23 +28,31 @@
 #include "CharactersManager.hpp"
 #include "CharacterStatsListMessage.hpp"
 #include "GameHandler.hpp"
+#include "Spell.hpp"
+#include "SpellListMessage.hpp"
+#include "Shortcut.hpp"
+#include "ShortcutBarContentMessage.hpp"
+#include "ShortcutBarRemovedMessage.hpp"
 
 class Character
 {
 public:
-	Character(camp::UserObject characterRecord, camp::UserObject accountRecord, WorldClient &client);
+	Character(camp::UserObject characterRecord, camp::UserObject accountRecord, WorldClient &client, bool isIngame);
 	~Character();
-	CharacterBaseInformations getCharacterBaseInformations();
-	GameRolePlayCharacterInformations *getGameRolePlayCharacterInformations();
-	ActorRestrictionsInformations getRestrictions();
-	HumanInformations	getHumanInformations();
-	std::vector<HumanOption> getHumanOptions();
-	ActorAlignmentInformations getActorAlignmentInformations();
-	CharacterCharacteristicsInformations getCharacterCharacteristicsInformations();
+	CharacterBaseInformations								getCharacterBaseInformations();
+	GameRolePlayCharacterInformations						*getGameRolePlayCharacterInformations();
+	ActorRestrictionsInformations							getRestrictions();
+	HumanInformations										getHumanInformations();
+	std::vector<HumanOption>								getHumanOptions();
+	ActorAlignmentInformations								getActorAlignmentInformations();
+	CharacterCharacteristicsInformations					getCharacterCharacteristicsInformations();
 	std::vector<CharacterSpellModification>					getCharacterSpellModification();
-	ActorExtendedAlignmentInformations getActorExtendedAlignmentInformations();
+	ActorExtendedAlignmentInformations						getActorExtendedAlignmentInformations();
 	EntityLook	getEntityLook();
-	void		loadDatas();
+	void		loadDatas(bool isIngame);
+	void		loadSpells();
+	void		loadShortcuts();
+
 	std::vector<uint>		getSkins();
 	std::vector<int>		getColors();
 	std::vector<SubEntity>	getSubEntities();
@@ -61,13 +69,25 @@ public:
 	void					onDisconnect();
 	Map						*getMap();
 	void					setMap(Map *map);
-	void						updatePosition(int mapId, int cellId);
+	void					updatePosition(int mapId, int cellId);
 	void					updateDirection(int direction);
 	int						getDirection();
 	WorldClient				&getClient();
 	Stats					&getStats();
 	void					sendStats();
-
+	void					sendSpells();
+	bool					hasSpellId(int spellId);
+	Spell					*getSpellById(int spellId);
+	bool					removeShortcut(int slotId, int typeId);
+	bool					addShortcut(ShortcutSpell *spell);
+	bool					addShortcut(ShortcutObjectItem *item);
+	camp::UserObject		&getShortcut(int slotId, int typeId);
+	std::vector<Shortcut*>	getSpellsShortcut();
+	std::vector<Shortcut*>	getItemsShortcut();
+	void					sendShortcuts();
+	void					swapShortcuts(int type, int first, int second);
+	void					removeShortcut(int id);
+	
 	void					startRegenLife(bool sendMessage = true);
 	void					stopRegenLife(bool sendMessage);
 
@@ -78,11 +98,13 @@ public:
 private:
 	camp::UserObject characterRecord;
 	camp::UserObject accountRecord;
-	WorldClient		 &client;
-	std::vector<uint> skins;
-	Map				  *map;
 
-	Stats			stats;
+	std::vector<Spell>				spells;
+	std::vector<camp::UserObject>	shortcuts;
+	WorldClient						&client;
+	std::vector<uint>				skins;
+	Map								*map;
+	Stats							stats;
 
 	uint defaultLook;
 	uint headLook;

@@ -15,7 +15,7 @@ public:
 	void setHigh(uint high);
 	uint getHigh();
 
-	double toNumber();
+	long long int toNumber();
 	std::string toString(uint radix = 10);
 };
 

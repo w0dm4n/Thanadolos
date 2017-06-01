@@ -45,7 +45,7 @@ void World::initializeData()
 	{
 		this->db = db;
 		this->initialized = true;
-		this->saveCycle = new Save(this->db, std::stoi(this->config->getData("SAVE_TIMER")));
+		this->saveCycle = new Save(this->db, this, std::stoi(this->config->getData("SAVE_TIMER")));
 	}
 }
 
@@ -62,9 +62,7 @@ LPSTR World::getLastWSError()
 void World::printStarted()
 {
 	std::string msg = "World server started on port ";
-	char buffer[20];
-	itoa(this->port, buffer, 10);
-	msg += buffer;
+	msg += std::to_string(this->port);
 	msg += ", waiting for connections..";
 	Logger::Infos(msg, 3);
 }
@@ -167,6 +165,7 @@ DWORD World::clientThread(WorldClient &client)
 				catch (std::exception &e)
 				{
 					Logger::Error("An error occured while handling a packet for one client", 12, e.what());
+					current_mutex.unlock();
 				}
 			}
 			else if (res <= 0)
