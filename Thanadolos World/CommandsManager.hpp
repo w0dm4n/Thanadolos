@@ -34,6 +34,7 @@ public:
 	static void teleportNameCommand(Split command, WorldClient &client);
 	static void kickCommand(Split command, WorldClient &client);
 	static void whoCommand(Split command, WorldClient &client);
+	static void experienceCommand(Split command, WorldClient &client);
 };
 
 #endif

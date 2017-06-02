@@ -24,6 +24,11 @@ std::string Character::getCharacterName()
 	return this->characterRecord.get("Name");
 }
 
+int Character::getCharacterLevel()
+{
+	return this->characterRecord.get("Level");
+}
+
 void Character::loadSpells()
 {
 	std::vector<camp::UserObject> baseCharacterSpells = this->client.getWorld()->getDatabase()->getCharacterSpells(this->characterRecord.get("Id"));
@@ -136,19 +141,27 @@ bool Character::addShortcut(ShortcutSpell *spell)
 {
 	if (this->getShortcut(spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR).pointer() == NULL)
 	{
-		camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, spell->spellId, 0,
-			spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
-		if (newShortcut.pointer() != NULL)
+		Spell *spell_template = this->getSpellById(spell->spellId);
+		if (this->getCharacterLevel() >= (int)spell_template->spellLevel.levelRecord.get("minPlayerLevel"))
 		{
-			this->shortcuts.push_back(newShortcut);
-			this->sendShortcuts();
+			camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, spell->spellId, 0,
+				spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+			if (newShortcut.pointer() != NULL)
+			{
+				this->shortcuts.push_back(newShortcut);
+				this->sendShortcuts();
+			}
 		}
 	}
 	else
 	{
-		camp::UserObject current = this->getShortcut(spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
-		current.set("ObjectId", spell->spellId);
-		this->sendShortcuts();
+		Spell *spell_template = this->getSpellById(spell->spellId);
+		if (this->getCharacterLevel() >= (int)spell_template->spellLevel.levelRecord.get("minPlayerLevel"))
+		{
+			camp::UserObject current = this->getShortcut(spell->slot, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+			current.set("ObjectId", spell->spellId);
+			this->sendShortcuts();
+		}
 	}
 
 	return true;
@@ -468,54 +481,54 @@ CharacterCharacteristicsInformations Character::getCharacterCharacteristicsInfor
 		CharacterBaseCharacteristic(1, 0, 0, 0, 0),
 		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
 		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		0,
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		CharacterBaseCharacteristic(0, 0, 0, 0, 0),
-		this->getCharacterSpellModification(),
-		0);
+0,
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+CharacterBaseCharacteristic(0, 0, 0, 0, 0),
+this->getCharacterSpellModification(),
+0);
 }
 
 Stats &Character::getStats()
@@ -563,4 +576,53 @@ Spell *Character::getSpellById(int spellId)
 			return &this->spells[i];
 	}
 	return NULL;
+}
+
+int Character::getAvailableShortcutSlot()
+{
+	if (this->shortcuts.size() > 0)
+	{
+		int slot = this->shortcuts[this->shortcuts.size() - 1].get("SlotId");
+		return (slot + 1);
+	}
+	else
+		return 1;
+}
+
+void Character::checkLevelUp()
+{
+	camp::UserObject experienceLevel = CharactersManager::getExperienceLevel(this->client);
+	if (this->getCharacterLevel() < (int) experienceLevel.get("Level"))
+	{
+		int diff = (int)experienceLevel.get("Level") - this->getCharacterLevel();
+		int levelBefore = this->getCharacterLevel();
+
+		this->characterRecord.set("Level", experienceLevel.get("Level"));
+		this->stats.increaseStatsPoints((diff * 5));
+		this->stats.increaseSpellsPoints(diff);
+		this->stats.updateCurrentLife(this->stats.getMaxLife());
+
+		client.sendMessage(CharacterLevelUpMessage(this->getCharacterLevel()));
+		int slot = this->getAvailableShortcutSlot();
+		for (int i = 0; i < this->spells.size(); i++)
+		{
+			camp::UserObject record = this->spells[i].spellLevel.levelRecord;
+			if (levelBefore < (int)record.get("minPlayerLevel") && this->getCharacterLevel() >= (int) record.get("minPlayerLevel"))
+			{
+				camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, this->spells[i].spellRecord.get("id"), 0,
+					slot++, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+				if (newShortcut.pointer() != NULL)
+					this->shortcuts.push_back(newShortcut);
+			}
+		}
+		client.character->sendShortcuts();
+	}
+}
+
+void Character::addExperience(long long int experience)
+{
+	this->characterRecord.set("Experience", std::to_string(CharactersManager::getCharacterExperience(this->client) + experience));
+	client.sendMessage(CharacterExperienceGainMessage(experience, 0, 0, 0));
+	this->checkLevelUp();
+	client.character->sendStats();
 }

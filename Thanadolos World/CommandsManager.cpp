@@ -18,6 +18,7 @@ void CommandsManager::manageCommand(std::string content, WorldClient &client)
 	commands.push_back(Commands("teleportName", &CommandsManager::teleportNameCommand, AccountRole::ANIMATOR, "Téléporte un joueur sur votre position"));
 	commands.push_back(Commands("kick", &CommandsManager::kickCommand, AccountRole::ANIMATOR, "Kick un joueur"));
 	commands.push_back(Commands("who", &CommandsManager::whoCommand, AccountRole::MODERATOR, "Liste les joueurs en ligne"));
+	commands.push_back(Commands("experience", &CommandsManager::experienceCommand, AccountRole::MODERATOR, "Permet de rajouter de l'expérience a un joueur"));
 
 	if (!strcmp(command, "help"))
 	{
@@ -127,7 +128,24 @@ void CommandsManager::teleportNameCommand(Split command, WorldClient &client)
 			client.character->replyText("Impossible de trouver ce joueur !");
 	}
 	else
-		client.character->replyError("Erreur de syntaxe (.teleportTo playerName)");
+		client.character->replyError("Erreur de syntaxe (.teleportName playerName)");
+}
+
+void CommandsManager::experienceCommand(Split command, WorldClient &client)
+{
+	if (command.size() == 3)
+	{
+		WorldClient *target = client.getWorld()->getClient(command[1]);
+		if (target != NULL)
+		{
+			target->character->addExperience(std::stoll(command[2]));
+			client.character->replyText("Expérience ajoutée avec succès sur le personnage <b>" + target->character->getCharacterName() + "</b>");
+		}
+		else
+			client.character->replyText("Impossible de trouver ce joueur !");
+	}
+	else
+		client.character->replyError("Erreur de syntaxe (.experience playerName number)");
 }
 
 void CommandsManager::kickCommand(Split command, WorldClient &client)

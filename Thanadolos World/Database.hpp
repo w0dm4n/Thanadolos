@@ -65,6 +65,8 @@ public:
 	std::vector<camp::UserObject> _experiences;
 	std::vector<camp::UserObject> _spells;
 	std::vector<camp::UserObject> _spells_levels;
+	std::vector<camp::UserObject> _items;
+
 	SAConnection db_con;
 	std::string host;
 	std::string database;

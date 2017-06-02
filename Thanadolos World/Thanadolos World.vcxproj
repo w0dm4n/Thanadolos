@@ -156,6 +156,8 @@
     <ClCompile Include="CharacterCreationResultMessage.cpp" />
     <ClCompile Include="CharacterDeletionErrorMessage.cpp" />
     <ClCompile Include="CharacterDeletionRequestMessage.cpp" />
+    <ClCompile Include="CharacterExperienceGainMessage.cpp" />
+    <ClCompile Include="CharacterLevelUpMessage.cpp" />
     <ClCompile Include="CharacterLoadingCompleteMessage.cpp" />
     <ClCompile Include="CharacterMinimalInformations.cpp" />
     <ClCompile Include="CharacterMinimalPlusLookInformations.cpp" />
@@ -306,6 +308,8 @@
     <ClInclude Include="CharacterCharacteristicsInformations.hpp" />
     <ClInclude Include="CharacterDeletionErrorEnum.hpp" />
     <ClInclude Include="CharacterDeletionRequestMessage.hpp" />
+    <ClInclude Include="CharacterExperienceGainMessage.hpp" />
+    <ClInclude Include="CharacterLevelUpMessage.hpp" />
     <ClInclude Include="CharacterLoadingCompleteMessage.hpp" />
     <ClInclude Include="CharacterRecord.hpp" />
     <ClInclude Include="CharacterBaseInformations.hpp" />
@@ -382,6 +386,7 @@
     <ClInclude Include="IpcNewCharacterMessage.hpp" />
     <ClInclude Include="IpcTicketAccountMessage.hpp" />
     <ClInclude Include="Item.hpp" />
+    <ClInclude Include="ItemsRecord.hpp" />
     <ClInclude Include="iType.hpp" />
     <ClInclude Include="LifePointsRegenBeginMessage.hpp" />
     <ClInclude Include="LifePointsRegenEndMessage.hpp" />

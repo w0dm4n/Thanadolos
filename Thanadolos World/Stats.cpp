@@ -298,6 +298,11 @@ void Stats::decreaseStatsPoints(int value)
 	this->statsRecord.set("StatsPoints", ((int) this->statsRecord.get("StatsPoints") - value));
 }
 
+void Stats::increaseStatsPoints(int value)
+{
+	this->statsRecord.set("StatsPoints", ((int) this->statsRecord.get("StatsPoints") + value));
+}
+
 void Stats::increaseSpellsPoints(int value)
 {
 	this->statsRecord.set("SpellsPoints", ((int) this->statsRecord.get("SpellsPoints") + value));

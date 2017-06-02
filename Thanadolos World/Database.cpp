@@ -14,6 +14,7 @@
 #include "CharacterSpellsRecord.hpp"
 #include "SpellsLevelsRecord.hpp"
 #include "CharacterShortcutsRecord.hpp"
+#include "ItemsRecord.hpp"
 #include "Utils.hpp"
 #include "Config.hpp"
 #include "World.hpp"
@@ -40,6 +41,7 @@ Database::Database(std::string host, std::string database, std::string user, std
 	CharacterSpellsRecord::declareRecord();
 	SpellsLevelsRecord::declareRecord();
 	CharacterShortcutsRecord::declareRecord();
+	ItemsRecord::declareRecord();
 }
 
 Database::~Database()
@@ -79,6 +81,7 @@ bool Database::loadTables()
 	visitors.push_back(this->getVisitor("MapsSubareasRecord"));
 	visitors.push_back(this->getVisitor("SpellsRecord"));
 	visitors.push_back(this->getVisitor("SpellsLevelsRecord"));
+	visitors.push_back(this->getVisitor("ItemsRecord"));
 	
 	while (i < visitors.size())
 		loaders.push_back(new Loader(this, visitors[i++]));

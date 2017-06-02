@@ -597,6 +597,12 @@
     <ClCompile Include="CommandsManager.cpp">
       <Filter>Fichiers sources\managers</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterLevelUpMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterExperienceGainMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.hpp">
@@ -1087,6 +1093,15 @@
     </ClInclude>
     <ClInclude Include="CommandsManager.hpp">
       <Filter>Fichiers d%27en-tête\managers</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterLevelUpMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterExperienceGainMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemsRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

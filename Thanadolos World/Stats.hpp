@@ -57,6 +57,7 @@ public:
 	int							getSpellsPoints();
 	void						increaseBaseStats(int statId);
 	void						decreaseStatsPoints(int value);
+	void						increaseStatsPoints(int value);
 	void						increaseSpellsPoints(int value);
 	void						decreaseSpellsPoints(int value);
 	void						updateCurrentLife(int lifePoints);

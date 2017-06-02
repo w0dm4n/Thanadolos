@@ -34,6 +34,10 @@
 #include "ShortcutBarContentMessage.hpp"
 #include "ShortcutBarRemovedMessage.hpp"
 
+#include "CharacterExperienceGainMessage.hpp"
+#include "CharacterLevelUpMessage.hpp"
+#include "UpdateLifePointsMessage.hpp"
+
 class Character
 {
 public:
@@ -62,6 +66,7 @@ public:
 	void					getSkinsBase();
 	camp::UserObject		getAccountRecord();
 	std::string				getCharacterName();
+	int						getCharacterLevel();
 	camp::UserObject		getCharacterRecord();
 	void					updateLevel(int value);
 	bool					isFirstContext();
@@ -89,7 +94,10 @@ public:
 	void					generateShortcuts();
 	void					swapShortcuts(int type, int first, int second);
 	void					removeShortcut(int id);
-	
+	int						getAvailableShortcutSlot();
+	void					addExperience(long long int experience);
+	void					checkLevelUp();
+
 	void					startRegenLife(bool sendMessage = true);
 	void					stopRegenLife(bool sendMessage);
 

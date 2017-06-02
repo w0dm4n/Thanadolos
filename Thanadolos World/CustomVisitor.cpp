@@ -34,6 +34,8 @@ std::string CustomVisitor::getTableNameByClassName()
 		return "spells_levels";
 	else if (this->className == "CharacterShortcutsRecord")
 		return "characters_shortcuts";
+	else if (this->className == "ItemsRecord")
+		return "items";
 	else
 		Logger::Error("Trying to get the table name of an incorrect record " + this->className + ", check the name");
 }
@@ -64,6 +66,8 @@ void CustomVisitor::addToVector(camp::UserObject object, Database *db)
 		db->_spells_levels.push_back(object);
 	else if (this->className == "CharacterShortcutsRecord")
 		db->_characters_shortcuts.push_back(object);
+	else if (this->className == "ItemsRecord")
+		db->_items.push_back(object);
 	else
 		Logger::Error("Trying to add object to an invalid record " + this->className + ", check the name");
 }
