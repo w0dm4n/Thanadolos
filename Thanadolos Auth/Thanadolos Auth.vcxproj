@@ -88,11 +88,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\cryptopp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Thanadolos\MySQL\connector\include;C:\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Thanadolos\MySQL\camp-master\include;C:\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\build\Debug;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\cryptopp\x64\DLL_Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Thanadolos\MySQL\connector\lib;C:\Thanadolos\MySQL\boost_1_63_0\libs;C:\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Thanadolos\MySQL\camp-master\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

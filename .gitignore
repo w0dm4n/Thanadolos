@@ -294,6 +294,3 @@ __pycache__/
 **/MySQL/*
 **/cryptopp/*
 **/test/*
-**/x64/*
-
-leaks.txt

@@ -10,7 +10,6 @@
 #include "Database.hpp"
 #include "Tickets.hpp"
 #pragma comment(lib, "ws2_32.lib")
-#pragma comment(lib, "cryptopp.lib")
 
 ServerListMessage AuthHandler::getServersList(Client &client)
 {
