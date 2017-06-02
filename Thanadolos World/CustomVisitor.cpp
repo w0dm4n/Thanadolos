@@ -2,6 +2,7 @@
 #include "CustomVisitor.hpp"
 #include "Database.hpp"
 #include "Loader.hpp"
+#include <stdexcept>
 
 void CustomVisitor::visit(const camp::SimpleProperty& property)
 {
@@ -135,31 +136,43 @@ std::string CustomVisitor::buildUpdateQuery(const camp::UserObject &object, std:
 	std::string request;
 	if (object.pointer() != NULL)
 	{
-		request = "update ";
-		request += this->getTableNameByClassName();
-		request += " set ";
-		int i = 0;
-		while (i < this->properties.size())
+		try
 		{
-			std::string data = object.get(this->properties[i].name());
+			request = "update ";
+			request += this->getTableNameByClassName();
+			request += " set ";
+			int i = 0;
+			while (i < this->properties.size())
+			{
+				std::string data = object.get(this->properties[i].name());
+				boost::replace_all(data, "'", "");
+				request += this->properties[i].name();
+				request += " = '";
+				request += data;
+				request += "'";
+				if ((i + 1) < this->properties.size())
+					request += ", ";
+				i++;
+			}
+
+			std::string data = object.get(this->properties[0].name());
 			boost::replace_all(data, "'", "");
-			request += this->properties[i].name();
+
+			request += " where ";
+			request += this->properties[0].name();
 			request += " = '";
 			request += data;
 			request += "'";
-			if ((i + 1) < this->properties.size())
-				request += ", ";
-			i++;
 		}
-
-		std::string data = object.get(this->properties[0].name());
-		boost::replace_all(data, "'", "");
-
-		request += " where ";
-		request += this->properties[0].name();
-		request += " = '";
-		request += data;
-		request += "'";
+		catch (const std::exception& ex) {
+			Logger::Error("An error occurred while trying to build an update query", 12, ex.what());
+		}
+		catch (const std::string& ex) {
+			Logger::Error("An error occurred while trying to build an update query", 12, ex);
+		}
+		catch (...) {
+			Logger::Error("An error occurred while trying to build an update query", 12, "Unknown error");
+		}
 	}
 	return request;
 }

@@ -27,5 +27,5 @@ START_MAP("154010883")
 START_CELL("383")
 MAX_AP("12")
 MAX_MP("6")
-SAVE_TIMER("60");
+SAVE_TIMER("1");
 WELCOME_MESSAGE("Welcome on Thanadolos alpha v1.0.0 !")

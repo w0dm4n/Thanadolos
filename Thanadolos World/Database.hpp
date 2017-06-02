@@ -72,7 +72,5 @@ public:
 	std::string database;
 	std::string user;
 	std::string password;
-
-private:
 	std::mutex m;
 };

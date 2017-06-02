@@ -18,6 +18,10 @@ public:
 	}
 
 	DWORD handleSave(Save&);
+	void saveCharactersSpells();
+	void saveCharactersStats();
+	void saveCharacters();
+	void saveCharactersShortcuts();
 private:
 	Database	*database;
 	World		*world;
