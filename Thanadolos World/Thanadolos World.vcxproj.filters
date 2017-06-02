@@ -603,6 +603,9 @@
     <ClCompile Include="CharacterExperienceGainMessage.cpp">
       <Filter>Fichiers sources\network\messages\character\stats</Filter>
     </ClCompile>
+    <ClCompile Include="FighterStatsListMessage.cpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.hpp">
@@ -1102,6 +1105,9 @@
     </ClInclude>
     <ClInclude Include="ItemsRecord.hpp">
       <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="FighterStatsListMessage.hpp">
+      <Filter>Fichiers sources\network\messages\character\stats</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

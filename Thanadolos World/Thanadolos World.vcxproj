@@ -186,6 +186,7 @@
     <ClCompile Include="EntityDispositionInformations.cpp" />
     <ClCompile Include="EntityLook.cpp" />
     <ClCompile Include="FightCommonInformations.cpp" />
+    <ClCompile Include="FighterStatsListMessage.cpp" />
     <ClCompile Include="FightOptionsInformations.cpp" />
     <ClCompile Include="FightStartingPositions.cpp" />
     <ClCompile Include="FightTeamInformations.cpp" />
@@ -351,6 +352,7 @@
     <ClInclude Include="EntityLook.hpp" />
     <ClInclude Include="ExperiencesRecord.hpp" />
     <ClInclude Include="FightCommonInformations.hpp" />
+    <ClInclude Include="FighterStatsListMessage.hpp" />
     <ClInclude Include="FightOptionsInformations.hpp" />
     <ClInclude Include="FightStartingPositions.hpp" />
     <ClInclude Include="FightTeamInformations.hpp" />
