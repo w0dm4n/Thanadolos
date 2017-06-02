@@ -294,3 +294,7 @@ __pycache__/
 **/MySQL/*
 **/cryptopp/*
 **/test/*
+
+leaks.txt
+world_config.th
+auth_config.th
