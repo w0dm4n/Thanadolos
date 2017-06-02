@@ -88,11 +88,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\connector\include;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\camp-master\include;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\boost_1_64_0\boost_1_64_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Thanadolos\MySQL\connector\include;C:\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Thanadolos\MySQL\camp-master\include;C:\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\connector\lib;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\boost_1_64_0\boost_1_64_0\libs;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\yovan\OneDrive\Documents\Projects\Thanadolos\MySQL\camp-master\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Thanadolos\MySQL\connector\lib;C:\Thanadolos\MySQL\boost_1_63_0\libs;C:\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Thanadolos\MySQL\camp-master\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>mysqlcppconn.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

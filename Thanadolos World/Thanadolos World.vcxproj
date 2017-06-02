@@ -82,14 +82,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\include;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Thanadolos\MySQL\include;C:\Thanadolos\MySQL\SqlAPI\x86_64\include;C:\Thanadolos\MySQL\camp-master\include;C:\Thanadolos\MySQL\boost_1_63_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_NONSTDC_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>Globals.h</PrecompiledHeaderFile>
       <AdditionalOptions>/Zm300 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\server\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\boost_1_63_0\libs;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Users\W0dm4\Documents\Visual Studio 2017\Projects\Thanadolos\camp\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Thanadolos\MySQL\lib;C:\Thanadolos\MySQL\boost_1_63_0\libs;C:\Thanadolos\MySQL\SqlAPI\x86_64\lib;C:\Thanadolos\MySQL\camp-master\build\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
