@@ -296,7 +296,6 @@ bool Database::createCharacter(CharacterCreationRequestMessage &data, WorldClien
 	try
 	{
 		std::vector<int> breedSpells = CharactersManager::getBreedSpells(data.breed, this);
-		std::cout << "breed spells : " << breedSpells.size() << std::endl;
 		std::lock_guard<std::mutex> locker(this->m);
 		const camp::Class &meta = camp::classByType<CharacterRecord>();
 		camp::UserObject character = meta.construct();

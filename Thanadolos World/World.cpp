@@ -46,6 +46,7 @@ void World::initializeData()
 		this->db = db;
 		this->initialized = true;
 		this->saveCycle = new Save(this->db, this, std::stoi(this->config->getData("SAVE_TIMER")));
+		this->startedAt = Utils::getUnixTimestamp();
 	}
 }
 
@@ -323,4 +324,51 @@ void World::sendToAllOnlineClients(IMessage &message)
 			client->sendMessage(message);
 		++iter;
 	}
+}
+
+
+int			World::countAllOnlineClients()
+{
+	std::lock_guard<std::mutex> locker(this->m);
+	int players = 0;
+	std::list<WorldClient*>::iterator iter = this->Clients.begin();
+	std::list<WorldClient*>::iterator end = this->Clients.end();
+
+	while (iter != this->Clients.end())
+	{
+		WorldClient *client = *iter;
+		if (client->character != NULL)
+			players++;
+		++iter;
+	}
+	return players;
+}
+
+std::string World::getUptime()
+{
+	long int dateNow = Utils::getUnixTimestamp();
+	int secs = (dateNow - this->startedAt);
+	int days = std::floor(secs / (3600 * 24));
+	int hours = std::floor((secs - (days * (3600 * 24))) / 3600);
+	int minutes = std::floor((secs - (days * (3600 * 24)) - (hours * 3600)) / 60);
+	int seconds = std::floor(secs - (days * (3600 * 24)) - (hours * 3600) - (minutes * 60));
+
+	return std::to_string(hours) + " heures, " + std::to_string(minutes) + " minutes" + ", " + std::to_string(seconds) + " secondes.";
+}
+
+std::vector<WorldClient*> World::getAllOnlineClients()
+{
+	std::lock_guard<std::mutex> locker(this->m);
+	std::vector<WorldClient*> clients;
+	std::list<WorldClient*>::iterator iter = this->Clients.begin();
+	std::list<WorldClient*>::iterator end = this->Clients.end();
+
+	while (iter != this->Clients.end())
+	{
+		WorldClient *client = *iter;
+		if (client->character != NULL)
+			clients.push_back(client);
+		++iter;
+	}
+	return clients;
 }

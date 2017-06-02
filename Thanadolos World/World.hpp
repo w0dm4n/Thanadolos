@@ -18,6 +18,10 @@ void	ft_bzero(void *s, size_t n);
 class World
 {
 public:
+	static const int VERSION_MAJOR = 1;
+	static const int VERSION_MINOR = 0;
+	static const int TYPE = 0;
+
 	std::list<WorldClient*> Clients;
 	std::vector<Map*> Maps;
 	World();
@@ -36,11 +40,14 @@ public:
 	Config *getConfig();
 	Save *getSave();
 	uint getId();
-	GameServerInformations getOnlineGameServerInformations();
-	Map			*getMapInstance(int mapId);
-	WorldClient *getWorldClientByAccountId(int id);
-	WorldClient *getClient(std::string name);
-	void		sendToAllOnlineClients(IMessage &message);
+	GameServerInformations		getOnlineGameServerInformations();
+	Map							*getMapInstance(int mapId);
+	WorldClient					*getWorldClientByAccountId(int id);
+	WorldClient					*getClient(std::string name);
+	void						sendToAllOnlineClients(IMessage &message);
+	int							countAllOnlineClients();
+	std::vector<WorldClient*>	getAllOnlineClients();
+	std::string getUptime();
 
 	void teleportClient(int mapId, int cellId, WorldClient &client);
 
@@ -85,19 +92,21 @@ public:
 	}
 
 private:
-	WSADATA	        wsData;
-	SOCKADDR_IN		Addr;
-	SOCKET Listener;
-	std::string host;
-	u_short port;
-	u_short ipc_port;
-	bool initialized;
-	Database *db;
-	std::mutex m;
-	IPC *ipc;
-	Config *config;
-	uint id;
-	Save *saveCycle;
+	WSADATA				wsData;
+	SOCKADDR_IN			Addr;
+	SOCKET				Listener;
+	std::string			host;
+	u_short				port;
+	u_short				ipc_port;
+	bool				initialized;
+	Database			*db;
+	std::mutex			m;
+	IPC					*ipc;
+	Config				*config;
+	uint				id;
+	Save				*saveCycle;
+	long int			startedAt;
+
 };
 
 #define DATA_BUFSIZE 8096

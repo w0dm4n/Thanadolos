@@ -19,6 +19,11 @@ void Character::setFirstContext(bool context)
 	this->firstContext = context;
 }
 
+std::string Character::getCharacterName()
+{
+	return this->characterRecord.get("Name");
+}
+
 void Character::loadSpells()
 {
 	std::vector<camp::UserObject> baseCharacterSpells = this->client.getWorld()->getDatabase()->getCharacterSpells(this->characterRecord.get("Id"));
@@ -171,12 +176,30 @@ bool Character::addShortcut(ShortcutObjectItem *item)
 	return true;
 }
 
+void Character::generateShortcuts()
+{
+	int levelCharacter = this->characterRecord.get("Level");
+	for (int i = 0; i < this->spells.size(); i++)
+	{
+		if (levelCharacter >= (int) this->spells[i].spellLevel.levelRecord.get("minPlayerLevel"))
+		{
+			camp::UserObject newShortcut = this->client.getWorld()->getDatabase()->createShortcut(this->characterRecord, this->spells[i].spellRecord.get("id"), 0,
+				i, ShortcutBarEnum::SPELL_SHORTCUT_BAR);
+			if (newShortcut.pointer() != NULL)
+				this->shortcuts.push_back(newShortcut);
+		}
+	}
+	this->sendShortcuts();
+}
+
 void Character::loadDatas(bool isIngame)
 {
 	if (isIngame)
 	{
 		this->loadSpells();
 		this->loadShortcuts();
+		if (this->shortcuts.size() == 0)
+			this->generateShortcuts();
 	}
 	this->getSkinsBase();
 	this->map = NULL;

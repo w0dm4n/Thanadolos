@@ -128,67 +128,75 @@ bool CustomVisitor::loadTable(Database *database, Loader *loader)
 
 std::string CustomVisitor::buildUpdateQuery(const camp::UserObject &object, std::string className)
 {
-	std::string request = "update ";
-	request += this->getTableNameByClassName();
-	request += " set ";
-	int i = 0;
-	while (i < this->properties.size())
+	std::string request;
+	if (object.pointer() != NULL)
 	{
-		std::string data = object.get(this->properties[i].name());
+		request = "update ";
+		request += this->getTableNameByClassName();
+		request += " set ";
+		int i = 0;
+		while (i < this->properties.size())
+		{
+			std::string data = object.get(this->properties[i].name());
+			boost::replace_all(data, "'", "");
+			request += this->properties[i].name();
+			request += " = '";
+			request += data;
+			request += "'";
+			if ((i + 1) < this->properties.size())
+				request += ", ";
+			i++;
+		}
+
+		std::string data = object.get(this->properties[0].name());
 		boost::replace_all(data, "'", "");
-		request += this->properties[i].name();
+
+		request += " where ";
+		request += this->properties[0].name();
 		request += " = '";
 		request += data;
 		request += "'";
-		if ((i + 1) < this->properties.size())
-			request += ", ";
-		i++;
 	}
-
-	std::string data = object.get(this->properties[0].name());
-	boost::replace_all(data, "'", "");
-
-	request += " where ";
-	request += this->properties[0].name();
-	request += " = '";
-	request += data;
-	request += "'";
 	return request;
 }
 
 std::string CustomVisitor::buildInsertQuery(const camp::UserObject &object, std::string className)
 {
-	std::string query = "insert into ";
-	query += this->getTableNameByClassName();
-	query += "(";
+	std::string query;
+	if (object.pointer() != NULL)
+	{
+		query = "insert into ";
+		query += this->getTableNameByClassName();
+		query += "(";
 
-	int i = 0;
-	while (i < this->properties.size())
-	{
-		if (this->properties[i].name() != "id" && this->properties[i].name() != "Id")
+		int i = 0;
+		while (i < this->properties.size())
 		{
-			query += this->properties[i].name();
-			if ((i + 1) < this->properties.size())
-				query += ", ";
+			if (this->properties[i].name() != "id" && this->properties[i].name() != "Id")
+			{
+				query += this->properties[i].name();
+				if ((i + 1) < this->properties.size())
+					query += ", ";
+			}
+			i++;
 		}
-		i++;
-	}
-	query += ") VALUES(";
-	i = 0;
-	while (i < this->properties.size())
-	{
-		if (this->properties[i].name() != "id" && this->properties[i].name() != "Id")
+		query += ") VALUES(";
+		i = 0;
+		while (i < this->properties.size())
 		{
-			std::string data = object.get(this->properties[i].name());
-			boost::replace_all(data, "'", "");
-			query += "'";
-			query += data;
-			query += "'";
-			if ((i + 1) < this->properties.size())
-				query += ", ";
+			if (this->properties[i].name() != "id" && this->properties[i].name() != "Id")
+			{
+				std::string data = object.get(this->properties[i].name());
+				boost::replace_all(data, "'", "");
+				query += "'";
+				query += data;
+				query += "'";
+				if ((i + 1) < this->properties.size())
+					query += ", ";
+			}
+			i++;
 		}
-		i++;
+		query += " )";
 	}
-	query += " )";
 	return query;
 }

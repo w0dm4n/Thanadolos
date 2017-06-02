@@ -61,6 +61,7 @@ public:
 	int						getBonesId();
 	void					getSkinsBase();
 	camp::UserObject		getAccountRecord();
+	std::string				getCharacterName();
 	camp::UserObject		getCharacterRecord();
 	void					updateLevel(int value);
 	bool					isFirstContext();
@@ -85,6 +86,7 @@ public:
 	std::vector<Shortcut*>	getSpellsShortcut();
 	std::vector<Shortcut*>	getItemsShortcut();
 	void					sendShortcuts();
+	void					generateShortcuts();
 	void					swapShortcuts(int type, int first, int second);
 	void					removeShortcut(int id);
 	

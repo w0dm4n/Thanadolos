@@ -29,6 +29,11 @@ public:
 	static void infosCommand(Split command, WorldClient &client);
 	static void announceCommand(Split command, WorldClient &client);
 	static void startCommand(Split command, WorldClient &client);
+	static void teleportCommand(Split command, WorldClient &client);
+	static void teleportToCommand(Split command, WorldClient &client);
+	static void teleportNameCommand(Split command, WorldClient &client);
+	static void kickCommand(Split command, WorldClient &client);
+	static void whoCommand(Split command, WorldClient &client);
 };
 
 #endif
