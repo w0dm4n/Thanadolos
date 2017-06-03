@@ -772,6 +772,8 @@ std::vector<camp::UserObject> Database::getVectorByRecord(std::string recordName
 		toUse = this->_spells;
 	else if (recordName == "SpellsLevelsRecord")
 		toUse = this->_spells_levels;
+	else if (recordName == "ItemsRecord")
+		return this->_items;
 	else
 		Logger::Error("Trying to get a not existing vector " + recordName + ", check the record name");
 	return toUse;
