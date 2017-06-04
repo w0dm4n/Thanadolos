@@ -16,10 +16,6 @@ void GameHandler::GameContextCreateRequestMessageHandler(BinaryReader &reader, W
 
 	// emotes
 	
-	
-	client.character->sendSpells();
-	client.character->sendStats();
-	client.character->sendShortcuts();
 	//client.sendMessage(UpdateLifePointsMessage(42, 42));
 	client.getWorld()->teleportClient(client.character->getCharacterRecord().get("MapId"), client.character->getCharacterRecord().get("CellId"), client);
 

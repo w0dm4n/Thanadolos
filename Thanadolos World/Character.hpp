@@ -37,6 +37,10 @@
 #include "CharacterExperienceGainMessage.hpp"
 #include "CharacterLevelUpMessage.hpp"
 #include "UpdateLifePointsMessage.hpp"
+#include "InventoryContentMessage.hpp"
+#include "InventoryWeightMessage.hpp"
+
+#include "Inventory.hpp"
 
 class Character
 {
@@ -98,6 +102,10 @@ public:
 	void					addExperience(long long int experience);
 	void					checkLevelUp();
 
+	int						getInventoryWeight();
+	int						getInventoryMaxWeight();
+	void					loadInventory();
+	void					sendInventory();
 	void					startRegenLife(bool sendMessage = true);
 	void					stopRegenLife(bool sendMessage);
 
@@ -115,6 +123,7 @@ private:
 	std::vector<uint>				skins;
 	Map								*map;
 	Stats							stats;
+	Inventory						inventory;
 
 	uint defaultLook;
 	uint headLook;

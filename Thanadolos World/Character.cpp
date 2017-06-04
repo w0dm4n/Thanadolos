@@ -213,6 +213,7 @@ void Character::loadDatas(bool isIngame)
 		this->loadShortcuts();
 		if (this->shortcuts.size() == 0)
 			this->generateShortcuts();
+		this->loadInventory();
 	}
 	this->getSkinsBase();
 	this->map = NULL;
@@ -389,6 +390,11 @@ void Character::onConnected()
 {
 	this->startRegenLife();
 	GameHandler::sendWelcomeMessage(this->client);
+
+	client.character->sendSpells();
+	client.character->sendStats();
+	client.character->sendShortcuts();
+	client.character->sendInventory();
 	// Friends ..
 }
 
@@ -447,6 +453,27 @@ void Character::sendSpells()
 	for (int i = 0; i < this->spells.size(); i++)
 		spells.push_back(SpellItem(this->spells[i].spellRecord.get("id"), this->spells[i].spellLevel.levelRecord.get("grade")));
 	client.sendMessage(SpellListMessage(true, spells));
+}
+
+int Character::getInventoryWeight()
+{
+	return 0;
+}
+
+int Character::getInventoryMaxWeight()
+{
+	return 1000;
+}
+
+void Character::loadInventory()
+{
+	this->inventory = Inventory(this);
+}
+
+void Character::sendInventory()
+{
+	client.sendMessage(InventoryWeightMessage(this->getInventoryWeight(), this->getInventoryMaxWeight()));
+	client.sendMessage(InventoryContentMessage(this->inventory.getObjectItem(), this->characterRecord.get("Kamas")));
 }
 
 CharacterCharacteristicsInformations Character::getCharacterCharacteristicsInformations()

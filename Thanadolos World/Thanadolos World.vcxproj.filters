@@ -175,6 +175,15 @@
     <Filter Include="Fichiers sources\network\messages\authorized">
       <UniqueIdentifier>{4a7dfb34-61b0-45a3-a2c0-5b570d3e1cce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\network\types\game\data\items\effects">
+      <UniqueIdentifier>{7cdb5937-a665-4979-8180-fc07f6089491}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\network\messages\inventory\items">
+      <UniqueIdentifier>{54610eb8-8124-49c7-b37a-e72bed068f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\world\characters\inventory">
+      <UniqueIdentifier>{b4c87742-7f3a-40b9-90e9-0bcdd5e6928c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -605,6 +614,30 @@
     </ClCompile>
     <ClCompile Include="FighterStatsListMessage.cpp">
       <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEffect.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectItem.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEffectInteger.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEffectDice.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectEffectMinMax.cpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryContentMessage.cpp">
+      <Filter>Fichiers sources\network\messages\inventory\items</Filter>
+    </ClCompile>
+    <ClCompile Include="InventoryWeightMessage.cpp">
+      <Filter>Fichiers sources\network\messages\inventory\items</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>Fichiers sources\world\characters\inventory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1108,6 +1141,30 @@
     </ClInclude>
     <ClInclude Include="FighterStatsListMessage.hpp">
       <Filter>Fichiers sources\network\messages\character\stats</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEffect.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectItem.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEffectInteger.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEffectDice.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectEffectMinMax.hpp">
+      <Filter>Fichiers sources\network\types\game\data\items\effects</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryContentMessage.hpp">
+      <Filter>Fichiers sources\network\messages\inventory\items</Filter>
+    </ClInclude>
+    <ClInclude Include="InventoryWeightMessage.hpp">
+      <Filter>Fichiers sources\network\messages\inventory\items</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.hpp">
+      <Filter>Fichiers sources\world\characters\inventory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

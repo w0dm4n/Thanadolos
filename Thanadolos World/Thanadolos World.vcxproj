@@ -220,6 +220,9 @@
     <ClCompile Include="int64.cpp" />
     <ClCompile Include="InteractiveElement.cpp" />
     <ClCompile Include="InteractiveElementSkill.cpp" />
+    <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="InventoryContentMessage.cpp" />
+    <ClCompile Include="InventoryWeightMessage.cpp" />
     <ClCompile Include="IPC.cpp" />
     <ClCompile Include="IpcDeletedCharacterMessage.cpp" />
     <ClCompile Include="IpcNewCharacterMessage.cpp" />
@@ -237,6 +240,11 @@
     <ClCompile Include="MapObstacle.cpp" />
     <ClCompile Include="MapsManager.cpp" />
     <ClCompile Include="NotificationListMessage.cpp" />
+    <ClCompile Include="ObjectEffect.cpp" />
+    <ClCompile Include="ObjectEffectDice.cpp" />
+    <ClCompile Include="ObjectEffectInteger.cpp" />
+    <ClCompile Include="ObjectEffectMinMax.cpp" />
+    <ClCompile Include="ObjectItem.cpp" />
     <ClCompile Include="Packet.cpp" />
     <ClCompile Include="Processor.cpp" />
     <ClCompile Include="PropertyData.cpp" />
@@ -383,6 +391,9 @@
     <ClInclude Include="imessage.h" />
     <ClInclude Include="InteractiveElement.hpp" />
     <ClInclude Include="InteractiveElementSkill.hpp" />
+    <ClInclude Include="Inventory.hpp" />
+    <ClInclude Include="InventoryContentMessage.hpp" />
+    <ClInclude Include="InventoryWeightMessage.hpp" />
     <ClInclude Include="IPC.hpp" />
     <ClInclude Include="IpcDeletedCharacterMessage.hpp" />
     <ClInclude Include="IpcNewCharacterMessage.hpp" />
@@ -404,6 +415,11 @@
     <ClInclude Include="MapsRecord.hpp" />
     <ClInclude Include="MapsSubareasRecord.hpp" />
     <ClInclude Include="NotificationListMessage.hpp" />
+    <ClInclude Include="ObjectEffect.hpp" />
+    <ClInclude Include="ObjectEffectDice.hpp" />
+    <ClInclude Include="ObjectEffectInteger.hpp" />
+    <ClInclude Include="ObjectEffectMinMax.hpp" />
+    <ClInclude Include="ObjectItem.hpp" />
     <ClInclude Include="Packet.hpp" />
     <ClInclude Include="Processor.hpp" />
     <ClInclude Include="PropertyData.hpp" />
