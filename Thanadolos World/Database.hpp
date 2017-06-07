@@ -7,6 +7,7 @@
 #include "WorldClient.hpp"
 #include "CustomVisitor.hpp"
 #include "CharactersManager.hpp"
+#include "ItemInventory.hpp"
 
 class Database
 {
@@ -22,13 +23,14 @@ public:
 	bool loadTables();
 	bool characterNameAvailable(const char *name);
 
-	bool createCharacter(CharacterCreationRequestMessage &data, WorldClient &client);
-	bool createCharacterStats(camp::UserObject characterRecord, WorldClient &client);
-	bool createCharacterSpells(std::vector<int> breedSpells, camp::UserObject character);
-	camp::UserObject createShortcut(camp::UserObject character, int objectId, int objectUID, int slotId, int typeId);
-	bool removeShortcut(int shortcutId);
-	bool loadCharacters(WorldClient &client);
-	int	 saveObject(camp::UserObject record);
+	bool						createCharacter(CharacterCreationRequestMessage &data, WorldClient &client);
+	bool						createCharacterStats(camp::UserObject characterRecord, WorldClient &client);
+	bool						createCharacterSpells(std::vector<int> breedSpells, camp::UserObject character);
+	camp::UserObject			createShortcut(camp::UserObject character, int objectId, int objectUID, int slotId, int typeId);
+	bool						removeShortcut(int shortcutId);
+	bool						loadCharacters(WorldClient &client);
+	int							saveObject(camp::UserObject record);
+
 	bool deleteShortcutRecordById(int id);
 	bool deleteCharacterRecordById(int id);
 	bool deleteCharacterStatsRecordById(int id);
@@ -48,9 +50,10 @@ public:
 	camp::UserObject getRecordObject(int index, std::string recordName, int propertyIndex = 0);
 	
 	/* Getter with lock on */
-	std::vector<camp::UserObject> getCharacterSpells(int id);
-	camp::UserObject getCharacterStats(int id);
-	std::vector<camp::UserObject> getCharacterShortcuts(int id);
+	std::vector<camp::UserObject>	getCharacterSpells(int id);
+	camp::UserObject				getCharacterStats(int id);
+	std::vector<camp::UserObject>	getCharacterShortcuts(int id);
+	std::vector<ItemInventory>		getCharacterItems(int characterId);
 
 	std::vector<camp::UserObject> _characters;
 	std::vector<camp::UserObject> _characters_stats;

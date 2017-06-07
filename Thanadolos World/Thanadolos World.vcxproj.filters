@@ -184,6 +184,9 @@
     <Filter Include="Fichiers sources\world\characters\inventory">
       <UniqueIdentifier>{b4c87742-7f3a-40b9-90e9-0bcdd5e6928c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\world\characters\inventory\items">
+      <UniqueIdentifier>{e7ec8404-3ba4-48aa-9dcf-204d4b1528c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -638,6 +641,12 @@
     </ClCompile>
     <ClCompile Include="Inventory.cpp">
       <Filter>Fichiers sources\world\characters\inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemInventory.cpp">
+      <Filter>Fichiers sources\world\characters\inventory\items</Filter>
+    </ClCompile>
+    <ClCompile Include="ItemEffect.cpp">
+      <Filter>Fichiers sources\world\characters\inventory\items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1165,6 +1174,15 @@
     </ClInclude>
     <ClInclude Include="Inventory.hpp">
       <Filter>Fichiers sources\world\characters\inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterItemRecord.hpp">
+      <Filter>Fichiers sources\database</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemInventory.hpp">
+      <Filter>Fichiers sources\world\characters\inventory\items</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemEffect.hpp">
+      <Filter>Fichiers sources\world\characters\inventory\items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

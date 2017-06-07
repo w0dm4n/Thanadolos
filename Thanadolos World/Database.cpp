@@ -15,6 +15,7 @@
 #include "SpellsLevelsRecord.hpp"
 #include "CharacterShortcutsRecord.hpp"
 #include "ItemsRecord.hpp"
+#include "CharacterItemRecord.hpp"
 #include "Utils.hpp"
 #include "Config.hpp"
 #include "World.hpp"
@@ -42,6 +43,7 @@ Database::Database(std::string host, std::string database, std::string user, std
 	SpellsLevelsRecord::declareRecord();
 	CharacterShortcutsRecord::declareRecord();
 	ItemsRecord::declareRecord();
+	CharacterItemRecord::declareRecord();
 }
 
 Database::~Database()
@@ -83,6 +85,7 @@ bool Database::loadTables()
 	visitors.push_back(this->getVisitor("SpellsLevelsRecord"));
 	visitors.push_back(this->getVisitor("ItemsRecord"));
 	
+
 	while (i < visitors.size())
 		loaders.push_back(new Loader(this, visitors[i++]));
 	while (true)
@@ -727,6 +730,44 @@ std::vector<camp::UserObject> Database::getCharacterShortcuts(int id)
 		return shortcuts;
 	}
 	return shortcuts;
+}
+
+std::vector<ItemInventory>	Database::getCharacterItems(int characterId)
+{
+	std::vector<ItemInventory> items;
+
+	try
+	{
+		std::lock_guard<std::mutex> locker(this->m);
+		SACommand cmd(&this->db_con);
+		SAString query = "select * from characters_items where CharacterId = :1";
+		cmd.setCommandText(query);
+		cmd.Param(1).setAsNumeric() = (sa_uint64_t)characterId;
+		cmd.Execute();
+		
+		const camp::Class &meta = camp::classByType<CharacterItemRecord>();
+
+		while (cmd.FetchNext())
+		{
+			camp::UserObject item = meta.construct();
+			item.set("Id", (sa_uint64_t)cmd.Field("Id").asNumeric());
+			item.set("CharacterId", (sa_uint64_t)cmd.Field("CharacterId").asNumeric());
+			item.set("TemplateId", (sa_uint64_t)cmd.Field("TemplateId").asNumeric());
+			item.set("Quantity", (sa_uint64_t)cmd.Field("Quantity").asNumeric());
+			item.set("Position", (sa_uint64_t)cmd.Field("Position").asNumeric());
+			item.set("Effects", (const char*)cmd.Field("Effects").asString());
+			items.push_back(ItemInventory(item));
+		}
+	}
+	catch (std::exception &e)
+	{
+		Logger::Error("An error occured while trying to delete a character", 12, e.what());
+	}
+	catch (SAException& x)
+	{
+		Logger::Error("An error occured while trying to delete a character", 12, x.ErrText().GetMultiByteChars());
+	}
+	return items;
 }
 
 int Database::getIndexModulo(std::vector<camp::UserObject> _objects, int askedId, int propertyId)

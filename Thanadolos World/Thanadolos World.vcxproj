@@ -228,6 +228,8 @@
     <ClCompile Include="IpcNewCharacterMessage.cpp" />
     <ClCompile Include="IpcTicketAccountMessage.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="ItemEffect.cpp" />
+    <ClCompile Include="ItemInventory.cpp" />
     <ClCompile Include="LifePointsRegenBeginMessage.cpp" />
     <ClCompile Include="LifePointsRegenEndMessage.cpp" />
     <ClCompile Include="Loader.cpp" />
@@ -318,6 +320,7 @@
     <ClInclude Include="CharacterDeletionErrorEnum.hpp" />
     <ClInclude Include="CharacterDeletionRequestMessage.hpp" />
     <ClInclude Include="CharacterExperienceGainMessage.hpp" />
+    <ClInclude Include="CharacterItemRecord.hpp" />
     <ClInclude Include="CharacterLevelUpMessage.hpp" />
     <ClInclude Include="CharacterLoadingCompleteMessage.hpp" />
     <ClInclude Include="CharacterRecord.hpp" />
@@ -399,6 +402,8 @@
     <ClInclude Include="IpcNewCharacterMessage.hpp" />
     <ClInclude Include="IpcTicketAccountMessage.hpp" />
     <ClInclude Include="Item.hpp" />
+    <ClInclude Include="ItemEffect.hpp" />
+    <ClInclude Include="ItemInventory.hpp" />
     <ClInclude Include="ItemsRecord.hpp" />
     <ClInclude Include="iType.hpp" />
     <ClInclude Include="LifePointsRegenBeginMessage.hpp" />

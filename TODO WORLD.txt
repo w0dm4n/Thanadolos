@@ -1,2 +1,4 @@
 TODO:
 Check current cell if walkable when connecting
+
+writeVarInt sur ObjectItem -> itemUID
